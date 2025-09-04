@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RailMate - Your Indian Travel Buddy</title>
+    <script src="https://cdn-tailwindcss.vercel.app/"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-orange: #FF9933; /* Saffron Orange */
+            --primary-green: #138808;   /* Green from the flag */
+            --primary-blue: #0d3b66;   /* A deep, trustworthy blue */
+            --dark-bg: #121212;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .section-bg-alt {
+            background-color: #f7f7f7;
+        }
+
+        /* --- HERO BACKGROUND (UPGRADED) --- */
+        .hero-bg {
+            background-color: #ffffff;
+            opacity: 0.08; /* Make it more subtle */
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230d3b66' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            animation: background-pan 60s linear infinite;
+        }
+        @keyframes background-pan {
+            0% { background-position: 0 0; }
+            100% { background-position: 60px 60px; }
+        }
+
+
+        /* --- ADVANCED ANIMATIONS --- */
+        .animated-element {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero-gradient-text {
+            background: linear-gradient(120deg, var(--primary-orange), var(--primary-green), var(--primary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .feature-card {
+            background: white;
+            border: 1px solid #EAEAEA;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            overflow: hidden;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* --- iPhone Mockup (BOTTOM NOTIFICATION) --- */
+        .iphone-mockup {
+            width: 300px; height: 610px; background-color: #1c1c1e; border: 10px solid #1c1c1e; border-radius: 54px;
+            box-shadow: 0 25px 70px -15px rgba(0,0,0,0.3), inset 0 4px 8px rgba(255,255,255,0.05); position: relative;
+        }
+        .iphone-screen {
+            background-image: url('https://images.unsplash.com/photo-1609533928169-4d549498084a?q=80&w=1887&auto=format&fit=crop');
+            background-size: cover; background-position: center; width: 100%; height: 100%; border-radius: 44px; overflow: hidden;
+            position: relative; display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .iphone-time-display {
+             width: 100%;
+             padding-top: 40px;
+             text-align: center;
+             color: white;
+             text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+        }
+        .iphone-time-display .time { font-size: 5rem; font-weight: 800; letter-spacing: -0.05em; line-height: 1; }
+        .iphone-time-display .date { font-weight: 600; font-size: 1.1rem; opacity: 0.9; margin-top: 4px;}
+        
+        .notification-stack { padding: 10px 10px 40px 10px; }
+        .notification-bubble {
+            background: rgba(240, 240, 240, 0.8);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border-radius: 20px;
+            padding: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1); 
+            transform: translateY(150%);
+            opacity: 0;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+        }
+        .notification-bubble.active { transform: translateY(0); opacity: 1; }
+        .notification-header { display: flex; align-items: center; margin-bottom: 4px; }
+        .notification-header .app-icon { width: 24px; height: 24px; border-radius: 6px; background-color: #fff; display: flex; align-items: center; justify-content: center; margin-right: 8px; font-size: 16px;}
+        .notification-header .app-name { font-weight: 600; font-size: 0.9rem; color: #333;}
+        .notification-header .time-ago { margin-left: auto; font-size: 0.9rem; color: #555;}
+        .notification-body .title { font-weight: 600; color: #000; }
+        .notification-body .message { color: #111; }
+
+        /* --- Coach Finder --- */
+        .ar-view { background: url('https://images.unsplash.com/photo-1613948922832-61a09c04a60d?q=80&w=1964&auto=format&fit=crop') center center / cover; position: relative; height: 300px; border-radius: 16px; }
+        .ar-glow-effect {
+            position: absolute; top: 50%; left: 50%; width: 90px; height: 160px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px 3px rgba(255, 153, 51, 0.8), 0 0 35px 8px rgba(255, 153, 51, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.5);
+            transform: translate(-50%, -50%) scale(0.8); opacity: 0;
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .ar-glow-effect.active { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
+        .airtag-finder { background-color: #000; color: #fff; height: 300px; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 8px; opacity: 0; transform: scale(0.9); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .airtag-finder.active { opacity: 1; transform: scale(1); }
+        .apple-arrow {
+            width: 80px; height: 80px;
+            color: var(--primary-orange);
+            filter: drop-shadow(0 0 20px var(--primary-orange));
+            animation: apple-arrow-pulse 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        }
+        @keyframes apple-arrow-pulse { 
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.15); opacity: 1; }
+        }
+        
+        /* --- Live Train Status (UPGRADED) --- */
+        .live-status-card { background: #1C1C1E; border-radius: 20px; padding: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .live-status-header { display: flex; justify-content: space-between; align-items: center; color: white; }
+        .live-train-path { position: relative; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; margin-top: 10px; }
+        .live-train-progress { position: absolute; height: 100%; background: linear-gradient(90deg, var(--primary-orange), #34D399); border-radius: 2px; width: 50%; animation: fill-progress 3s ease-out forwards; }
+        @keyframes fill-progress { from { width: 0%; } to { width: 50%; } }
+        .live-train-icon {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 30px; height: 30px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 0 4px rgba(0,0,0,0.5); z-index: 10;
+            animation: move-train 3s ease-out forwards;
+        }
+        @keyframes move-train { from { left: 0%; } to { left: 50%; } }
+        .blinking-dot { width: 8px; height: 8px; background-color: var(--primary-orange); border-radius: 50%; animation: blink 1.5s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        #pnr-output { min-height: 100px; }
+        
+        /* --- AI Planner Styles (ELEGANT REVAMP) --- */
+        #ai-planner-output { min-height: 200px; transition: all 0.5s ease; }
+        .loader { width: 48px; height: 48px; border: 5px solid rgba(0,0,0,0.1); border-bottom-color: var(--primary-orange); border-radius: 50%; display: inline-block; box-sizing: border-box; animation: rotation 1s linear infinite; }
+        @keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        .gemini-response-elegant { padding-top: 0.5rem; }
+        .itinerary-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        .itinerary-icon {
+            flex-shrink: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-blue);
+            color: white;
+            border-radius: 12px;
+            margin-top: -2px;
+            box-shadow: 0 4px 12px rgba(13, 59, 102, 0.3);
+        }
+        .itinerary-icon svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+        .itinerary-content p { margin: 0; color: #333; }
+        .itinerary-content .day-title { font-weight: 700; color: #000; font-size: 1.1rem; }
+        .itinerary-content .details { font-size: 0.95rem; color: #555; }
+        .itinerary-content .tags { margin-top: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .itinerary-content .tag { background-color: #e9ecef; color: #495057; font-size: 0.75rem; font-weight: 500; padding: 0.2rem 0.6rem; border-radius: 9999px; }
+
+        .planner-tab { padding: 0.75rem 1.5rem; font-weight: 600; border-bottom: 3px solid transparent; cursor: pointer; transition: all 0.3s ease; }
+        .planner-tab.active { color: var(--primary-orange); border-bottom-color: var(--primary-orange); }
+        .station-result-card { text-align: center; padding: 2rem; }
+        .station-result-card p { color: #666; margin-bottom: 0.5rem; }
+        .station-result-card h2 { font-size: 2.25rem; font-weight: 800; color: var(--primary-blue); }
+
+        /* --- User Journey --- */
+        .journey-line {
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-green), var(--primary-orange));
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/80">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold tracking-tight text-gray-800">
+                <span class="text-orange-500">🚆</span> RailMate
+            </h1>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600">
+                <a href="#features" class="hover:text-orange-600 transition-colors">Features</a>
+                <a href="#ai-planner" class="hover:text-orange-600 transition-colors">AI Planner</a>
+                <a href="#journey" class="hover:text-orange-600 transition-colors">User Journey</a>
+                <a href="#roadmap" class="hover:text-orange-600 transition-colors">Our Vision</a>
+                <a href="#" class="bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-black transition-colors hover:scale-105 transform">Get Started</a>
+            </nav>
+            <button class="md:hidden text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center text-center pt-20 px-4 relative isolate">
+             <div class="absolute inset-0 -z-10 hero-bg"></div>
+            <div class="max-w-4xl mx-auto">
+                <div class="animated-element">
+                    <span class="inline-block bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">The Future of Indian Train Travel</span>
+                </div>
+                <h1 class="animated-element text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter mb-6 whitespace-nowrap" style="transition-delay: 0.1s;">
+                    Rethink Your Journey.
+                </h1>
+                <p class="animated-element max-w-2xl mx-auto text-lg md:text-xl text-gray-500 mb-10" style="transition-delay: 0.2s;">
+                    From booking a ticket to finding your seat without the last-minute panic, RailMate is the ultimate travel buddy for a seamless journey across India.
+                </p>
+                <div class="animated-element" style="transition-delay: 0.3s;">
+                    <a href="#features" class="bg-gray-900 text-white text-lg font-semibold px-8 py-4 rounded-full inline-block hover:bg-black transition-transform hover:scale-105 shadow-lg">Explore Features</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-20 lg:py-32 section-bg-alt">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="animated-element text-4xl md:text-5xl font-extrabold tracking-tighter">Your Smart Travel Companion Awaits.</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1: Smart Ticketing (UPGRADED) -->
+                    <div class="animated-element feature-card p-8 col-span-1 md:col-span-2 lg:col-span-3">
+                        <div>
+                            <span class="inline-block bg-green-100 text-green-700 text-sm font-semibold px-3 py-1 rounded-full mb-3">Booking Reimagined</span>
+                            <h3 class="text-2xl font-bold mb-4">Find Your Perfect Ticket, Instantly.</h3>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-2xl">
+                            <div class="bg-white shadow-lg rounded-xl overflow-hidden">
+                               <div class="p-4 border-b grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+                                    <div class="relative md:col-span-1">
+                                        <label for="from-station" class="absolute -top-2 left-3 bg-white px-1 text-xs text-gray-500">From</label>
+                                        <input type="text" id="from-station" value="New Delhi (NDLS)" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 outline-none">
+                                    </div>
+                                    <div class="relative md:col-span-1">
+                                        <label for="to-station" class="absolute -top-2 left-3 bg-white px-1 text-xs text-gray-500">To</label>
+                                        <input type="text" id="to-station" value="Mumbai (BCT)" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 outline-none">
+                                    </div>
+                                    <div class="relative md:col-span-1">
+                                        <label for="dep-date" class="absolute -top-2 left-3 bg-white px-1 text-xs text-gray-500">Departure</label>
+                                        <input type="date" id="dep-date" value="2025-09-04" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 outline-none text-gray-700">
+                                    </div>
+                                    <button class="w-full md:col-span-1 bg-gray-900 text-white font-semibold p-3 rounded-lg hover:bg-black transition-transform hover:scale-105">
+                                        Search Trains
+                                    </button>
+                               </div>
+                               <!-- Selected Option -->
+                               <div class="p-4 border-b-4 border-green-500">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <p class="font-bold text-lg text-green-700">12951 Mumbai Rajdhani</p>
+                                            <p class="text-sm text-gray-500">16:00 (NDLS) → 08:15 (BCT) <span>• 16h 15m</span></p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="font-semibold text-xl">From ₹2,955</p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 flex space-x-4 text-xs text-gray-600">
+                                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full">✓ Fastest</span>
+                                        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full">✓ Food Included</span>
+                                    </div>
+                               </div>
+                               <!-- Other Options -->
+                               <div class="p-4">
+                                    <h4 class="font-semibold text-gray-500 mb-2 text-sm">OTHER OPTIONS FOR TODAY</h4>
+                                    <div class="flex justify-between items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                        <div>
+                                            <p class="font-bold">12909 NZM BDTS Garib Rath</p>
+                                            <p class="text-sm text-gray-500">17:15 (NZM) → 09:15 (BDTS) <span>• 16h 00m</span></p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="font-semibold">From ₹1,570</p>
+                                        </div>
+                                    </div>
+                                     <div class="flex justify-between items-center p-3 rounded-lg bg-red-50 opacity-70">
+                                        <div>
+                                            <p class="font-bold text-gray-500">22221 NZM CSMT Rajdhani</p>
+                                            <p class="text-sm text-gray-400">16:55 (NZM) → 11:50 (CSMT)</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="font-semibold text-red-600">Regret/WL</p>
+                                        </div>
+                                    </div>
+                               </div>
+                               <div class="bg-orange-50 p-3 text-center text-sm text-orange-800 border-t">
+                                    <strong>Next Day Alternative:</strong> Tejas Express (Thu, 09:30, ₹2,550)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2: Coach Finder -->
+                    <div class="animated-element feature-card p-8 col-span-1 lg:col-span-2" style="transition-delay: 0.1s;">
+                        <span class="inline-block bg-purple-100 text-purple-700 text-sm font-semibold px-3 py-1 rounded-full mb-3">Effortless Navigation</span>
+                        <h3 class="text-2xl font-bold mb-2">Coach Finder</h3>
+                        <p class="text-gray-500 mb-6">Point your camera to see your coach glow in AR, or use the compass for precise directions, even offline.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <p class="font-semibold text-center mb-2">Camera View</p>
+                                <div class="ar-view">
+                                    <div class="ar-glow-effect"></div>
+                                    <div class="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black/50 text-white text-xs px-3 py-1 rounded-full backdrop-blur-sm">Coach B2</div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-center mb-2">Directional View</p>
+                                <div class="airtag-finder">
+                                    <svg class="apple-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.0006 8.00016L4.22266 15.7781L5.63666 17.1921L12.0006 10.8282L18.3646 17.1921L19.7787 15.7781L12.0006 8.00016Z"></path></svg>
+                                    <p class="text-3xl font-bold tracking-tight">40m</p>
+                                    <p class="text-gray-400">Coach B2 is ahead</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3: Personalized Alerts -->
+                    <div class="animated-element feature-card p-0 col-span-1 lg:col-span-1 flex flex-col items-center" style="transition-delay: 0.2s;">
+                        <div class="p-8 pb-0 w-full">
+                            <span class="inline-block bg-yellow-100 text-yellow-700 text-sm font-semibold px-3 py-1 rounded-full mb-3">Stay Informed</span>
+                            <h3 class="text-2xl font-bold mb-2">Personalized Alerts</h3>
+                            <p class="text-gray-500">Get simplified, crucial updates right on your lock screen.</p>
+                        </div>
+                        <div class="w-full h-full flex justify-center items-center p-6 pt-2">
+                           <div class="iphone-mockup">
+                                <div class="iphone-screen">
+                                    <div class="iphone-time-display">
+                                        <div class="time">13:53</div>
+                                        <div class="date">Thursday, 4 September</div>
+                                    </div>
+                                    <div class="notification-stack">
+                                        <div id="simplified-announcement" class="notification-bubble">
+                                             <div class="notification-header">
+                                                <div class="app-icon">🚆</div>
+                                                <span class="app-name">RailMate</span>
+                                                <span class="time-ago">now</span>
+                                             </div>
+                                             <div class="notification-body">
+                                                <p class="title">Platform Change</p>
+                                                <p class="message">Your 2:00 PM train, 12952 Rajdhani Exp to Mumbai, will now depart from Platform 5.</p>
+                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4: Live Train Status (UPGRADED) -->
+                    <div class="animated-element feature-card p-8 col-span-1 lg:col-span-3" style="transition-delay: 0.3s;">
+                        <div class="flex justify-between items-center mb-4">
+                            <div>
+                                <span class="inline-block bg-cyan-100 text-cyan-700 text-sm font-semibold px-3 py-1 rounded-full">Real-Time Tracking</span>
+                                <h3 class="text-2xl font-bold mt-2">Never Lose Track</h3>
+                            </div>
+                            <div class="flex border border-gray-200 rounded-lg p-1 bg-gray-100">
+                                <button id="status-tab-live" class="planner-tab text-sm active bg-white rounded-md shadow">Live Status</button>
+                                <button id="status-tab-pnr" class="planner-tab text-sm">PNR Status</button>
+                            </div>
+                        </div>
+
+                        <!-- Live Status Content -->
+                        <div id="live-status-content">
+                            <div class="live-status-card">
+                                 <div class="live-status-header">
+                                    <div>
+                                        <h4 class="font-bold text-lg">Mumbai Rajdhani / 12951</h4>
+                                        <p class="text-sm text-gray-400">to Mumbai Central (BCT)</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="font-semibold text-green-400">On Time</p>
+                                        <p class="text-xs text-gray-500">Updated 1m ago</p>
+                                    </div>
+                                 </div>
+                                 <div class="relative pt-10 pb-2 text-white">
+                                    <div class="live-train-path">
+                                        <div class="live-train-progress"></div>
+                                        <div class="live-train-icon">
+                                            <div class="blinking-dot"></div>
+                                        </div>
+                                    </div>
+                                     <div class="flex justify-between text-xs font-bold mt-2">
+                                        <span>New Delhi</span>
+                                        <span class="absolute left-1/2 -translate-x-1/2 -top-1">Surat</span>
+                                        <span>Mumbai</span>
+                                     </div>
+                                     <div class="text-center mt-6">
+                                         <p class="text-gray-400">Next Stop: Surat</p>
+                                         <p class="text-2xl font-bold">Arriving in 12 mins</p>
+                                     </div>
+                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- PNR Status Content -->
+                        <div id="pnr-status-content" class="hidden">
+                            <div class="bg-gray-50 p-6 rounded-2xl">
+                                <div class="relative mb-4">
+                                    <input id="pnr-input" type="text" placeholder="Enter 10-digit PNR" class="w-full pl-5 pr-32 py-4 rounded-full border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition text-lg">
+                                    <button id="pnr-btn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-900 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-black transition-transform hover:scale-105">Check</button>
+                                </div>
+                                <div id="pnr-output" class="bg-white p-6 rounded-lg text-left mt-4">
+                                     <p class="text-center text-gray-500">Your PNR status will appear here...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- AI Trip Planner Section -->
+        <section id="ai-planner" class="py-20 lg:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="animated-element text-4xl md:text-5xl font-extrabold tracking-tighter">Plan Your Perfect Getaway</h2>
+                    <p class="animated-element text-lg text-gray-500 mt-4" style="transition-delay: 0.1s;">Dreaming of a trip but dread the planning? Describe your ideal getaway—from a spiritual journey to Vrindavan to a vibrant week in Goa—and let our AI craft a complete, rail-centric travel plan just for you.</p>
+                </div>
+                <div class="animated-element max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-2xl border" style="transition-delay: 0.2s;">
+                    <!-- Planner Tabs -->
+                    <div class="flex justify-center border-b mb-6">
+                        <button id="tab-itinerary" class="planner-tab active">Trip Itinerary</button>
+                        <button id="tab-station" class="planner-tab">Nearest Station</button>
+                    </div>
+
+                    <!-- Input Area -->
+                    <div class="relative mb-4">
+                        <input id="planner-input" type="text" placeholder="e.g., Chandigarh to Goa" class="w-full pl-5 pr-32 py-4 rounded-full border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition text-lg">
+                        <button id="planner-btn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-900 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-black transition-transform hover:scale-105">Generate</button>
+                    </div>
+                     <div id="planner-examples" class="text-center text-sm text-gray-400">
+                        Try: <button class="hover:text-orange-500">Mumbai to Kerala</button> &middot; <button class="hover:text-orange-500">Delhi to Kolkata</button>
+                    </div>
+                    
+                    <!-- Output -->
+                    <div id="ai-planner-output" class="bg-gray-50 p-6 rounded-lg text-left mt-6">
+                        <p class="text-center text-gray-500">Your personalized travel plan will appear here...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Journey Section -->
+        <section id="journey" class="py-20 lg:py-32 section-bg-alt">
+           <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="animated-element text-4xl md:text-5xl font-extrabold tracking-tighter">A Truly Seamless Experience</h2>
+                    <p class="animated-element text-lg text-gray-500 mt-4">Follow a typical user journey and see how every step is simplified.</p>
+                </div>
+                <div class="relative">
+                    <div class="hidden lg:block absolute top-8 left-0 w-full h-1 journey-line" style="transform: translateY(-50%); z-index: 0;"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 relative">
+                        <!-- Step 1 -->
+                        <div class="animated-element text-center z-10" style="transition-delay: 0s;">
+                           <div class="flex items-center justify-center bg-blue-100 text-blue-600 w-16 h-16 rounded-full mx-auto mb-4 border-4 border-gray-100 shadow-md">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                           </div>
+                           <h3 class="font-bold mb-1">Book Ticket</h3>
+                           <p class="text-sm text-gray-500">User books a ticket via the Smart Calendar.</p>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="animated-element text-center z-10" style="transition-delay: 0.1s;">
+                           <div class="flex items-center justify-center bg-green-100 text-green-600 w-16 h-16 rounded-full mx-auto mb-4 border-4 border-gray-100 shadow-md">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.33-10.5c.2-.05.39-.1.59-.15C17.7 8.05 19 7.15 19 6a3 3 0 0 0-3-3c-1.12 0-2.25.4-3.17 1.25M12 12v9"></path><path d="M21 12h-2.5a1.5 1.5 0 0 0-1.5 1.5v0a1.5 1.5 0 0 0 1.5 1.5H21"></path></svg>
+                           </div>
+                           <h3 class="font-bold mb-1">Plan Trip with AI</h3>
+                           <p class="text-sm text-gray-500">Generates a custom itinerary for the destination.</p>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="animated-element text-center z-10" style="transition-delay: 0.2s;">
+                           <div class="flex items-center justify-center bg-yellow-100 text-yellow-600 w-16 h-16 rounded-full mx-auto mb-4 border-4 border-gray-100 shadow-md">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                           </div>
+                           <h3 class="font-bold mb-1">Get Notifications</h3>
+                           <p class="text-sm text-gray-500">Gets AI-simplified alerts on platform changes.</p>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="animated-element text-center z-10" style="transition-delay: 0.3s;">
+                           <div class="flex items-center justify-center bg-purple-100 text-purple-600 w-16 h-16 rounded-full mx-auto mb-4 border-4 border-gray-100 shadow-md">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                           </div>
+                           <h3 class="font-bold mb-1">Get AR Coach Guide</h3>
+                           <p class="text-sm text-gray-500">Receives AR directions to their coach on arrival.</p>
+                        </div>
+                        <!-- Step 5 -->
+                        <div class="animated-element text-center z-10" style="transition-delay: 0.4s;">
+                           <div class="flex items-center justify-center bg-red-100 text-red-600 w-16 h-16 rounded-full mx-auto mb-4 border-4 border-gray-100 shadow-md">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                           </div>
+                           <h3 class="font-bold mb-1">Backup Option</h3>
+                           <p class="text-sm text-gray-500">If missed, the app shows the next available train.</p>
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </section>
+        
+        <!-- Roadmap Section -->
+        <section id="roadmap" class="py-20 lg:py-24 bg-white">
+             <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="animated-element text-4xl md:text-5xl font-extrabold tracking-tighter" style="color: var(--primary-blue);">Our Vision for Indian Railways</h2>
+                    <p class="animated-element text-lg text-gray-500 mt-4">We're committed to making train travel in India simpler, smarter, and more accessible for everyone. One step at a time.</p>
+                </div>
+             </div>
+        </section>
+
+    </main>
+    
+    <footer style="background-color: var(--dark-bg);" class="text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-2">Ready for a better travel experience?</h3>
+            <p class="text-gray-400 mb-6">RailMate is coming soon. Stay in the loop.</p>
+            <a href="#" style="background-color: var(--primary-orange);" class="text-white text-md font-semibold px-6 py-3 rounded-full inline-block hover:opacity-90 transition-opacity hover:scale-105 transform">Stay Updated</a>
+            <p class="text-xs text-gray-500 mt-10">&copy; 2025 RailMate. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- General Animation Observer ---
+            const animatedElements = document.querySelectorAll('.animated-element');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            animatedElements.forEach(el => observer.observe(el));
+            
+            // --- Specific Observers for persistent animations ---
+            const persistentAnimatedElements = document.querySelectorAll('.ar-view, .iphone-mockup');
+            const persistentObserver = new IntersectionObserver((entries) => {
+                 entries.forEach(entry => {
+                    const target = entry.target;
+                    if (entry.isIntersecting) {
+                        if (target.classList.contains('ar-view')) {
+                            target.querySelector('.ar-glow-effect')?.classList.add('active');
+                            target.closest('.feature-card').querySelector('.airtag-finder')?.classList.add('active');
+                        }
+                        if (target.classList.contains('iphone-mockup')) {
+                            setTimeout(() => {
+                                target.querySelector('.notification-bubble')?.classList.add('active');
+                            }, 300);
+                        }
+                    } else {
+                        // This part makes the animation reset and replay when scrolling back into view
+                        if (target.classList.contains('ar-view')) {
+                            target.querySelector('.ar-glow-effect')?.classList.remove('active');
+                            target.closest('.feature-card').querySelector('.airtag-finder')?.classList.remove('active');
+                        }
+                        if (target.classList.contains('iphone-mockup')) {
+                           target.querySelector('.notification-bubble')?.classList.remove('active');
+                        }
+                    }
+                });
+            }, { threshold: 0.6 });
+            persistentAnimatedElements.forEach(el => persistentObserver.observe(el));
+
+            // --- LIVE STATUS / PNR TABS LOGIC ---
+            const statusTabLive = document.getElementById('status-tab-live');
+            const statusTabPnr = document.getElementById('status-tab-pnr');
+            const liveStatusContent = document.getElementById('live-status-content');
+            const pnrStatusContent = document.getElementById('pnr-status-content');
+            const pnrBtn = document.getElementById('pnr-btn');
+            const pnrInput = document.getElementById('pnr-input');
+            const pnrOutput = document.getElementById('pnr-output');
+
+            statusTabLive.addEventListener('click', () => {
+                statusTabLive.classList.add('active', 'bg-white', 'shadow');
+                statusTabPnr.classList.remove('active', 'bg-white', 'shadow');
+                liveStatusContent.classList.remove('hidden');
+                pnrStatusContent.classList.add('hidden');
+            });
+
+            statusTabPnr.addEventListener('click', () => {
+                statusTabPnr.classList.add('active', 'bg-white', 'shadow');
+                statusTabLive.classList.remove('active', 'bg-white', 'shadow');
+                pnrStatusContent.classList.remove('hidden');
+                liveStatusContent.classList.add('hidden');
+            });
+            
+            pnrBtn.addEventListener('click', async () => {
+                const pnr = pnrInput.value;
+                if (!pnr || pnr.length !== 10 || !/^\d+$/.test(pnr)) {
+                    pnrOutput.innerHTML = '<p class="text-center text-red-500">Please enter a valid 10-digit PNR.</p>';
+                    return;
+                }
+                pnrOutput.innerHTML = '<div class="flex justify-center items-center p-8"><div class="loader"></div></div>';
+                
+                // Simulate API call
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                let resultHTML = '';
+                // Simple logic for mock data
+                if (pnr.startsWith('24')) { // Confirmed
+                    resultHTML = `<div class="text-center">
+                        <p class="font-semibold text-lg text-green-600">Status: Confirmed</p>
+                        <p><strong>Coach:</strong> B2, <strong>Seat:</strong> 45, 46</p>
+                    </div>`;
+                } else if (pnr.startsWith('86')) { // Waitlisted
+                    resultHTML = `<div class="text-center">
+                        <p class="font-semibold text-lg text-orange-600">Status: Waitlisted (WL/15)</p>
+                        <p>Booking Status: WL/35, Current Status: WL/15</p>
+                    </div>`;
+                } else { // Generic
+                     resultHTML = `<div class="text-center">
+                        <p class="font-semibold text-lg text-gray-700">Status: Chart Not Prepared</p>
+                        <p>Your ticket is not yet charted.</p>
+                    </div>`;
+                }
+                pnrOutput.innerHTML = resultHTML;
+            });
+
+            // --- AI PLANNER LOGIC ---
+            const plannerBtn = document.getElementById('planner-btn');
+            const plannerInput = document.getElementById('planner-input');
+            const aiOutputDiv = document.getElementById('ai-planner-output');
+            const exampleButtons = document.querySelectorAll('#planner-examples button');
+            const tabItinerary = document.getElementById('tab-itinerary');
+            const tabStation = document.getElementById('tab-station');
+            const plannerExamples = document.getElementById('planner-examples');
+            
+            let currentPlannerMode = 'itinerary';
+
+            function setPlannerMode(mode) {
+                currentPlannerMode = mode;
+                if (mode === 'itinerary') {
+                    tabItinerary.classList.add('active');
+                    tabStation.classList.remove('active');
+                    plannerInput.placeholder = "e.g., Chandigarh to Goa";
+                    plannerBtn.textContent = "Generate";
+                    plannerExamples.style.display = 'block';
+                } else {
+                    tabStation.classList.add('active');
+                    tabItinerary.classList.remove('active');
+                    plannerInput.placeholder = "e.g., Taj Mahal, Agra";
+                    plannerBtn.textContent = "Find";
+                    plannerExamples.style.display = 'none';
+                }
+                plannerInput.value = "";
+                aiOutputDiv.innerHTML = '<p class="text-center text-gray-500">Your results will appear here...</p>';
+            }
+
+            tabItinerary.addEventListener('click', () => setPlannerMode('itinerary'));
+            tabStation.addEventListener('click', () => setPlannerMode('station'));
+
+            exampleButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    plannerInput.value = button.textContent;
+                    plannerBtn.click();
+                });
+            });
+
+            plannerBtn.addEventListener('click', async () => {
+                const query = plannerInput.value;
+                if (!query) {
+                    aiOutputDiv.innerHTML = '<p class="text-center text-red-500">Please enter a destination or place.</p>';
+                    return;
+                }
+                aiOutputDiv.innerHTML = '<div class="flex justify-center items-center p-8"><div class="loader"></div></div>';
+                
+                try {
+                    const resultText = await callGeminiAPI(query, currentPlannerMode);
+                    aiOutputDiv.innerHTML = resultText;
+                } catch (error) {
+                    aiOutputDiv.innerHTML = '<p class="text-center text-red-500">Sorry, something went wrong.</p>';
+                }
+            });
+
+            async function callGeminiAPI(query, mode) {
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                const transportIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 17.063V5a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v12.063A4.002 4.002 0 0 0 8 22a4 4 0 0 0 8 0 4.002 4.002 0 0 0 4-4.937zM7 4h10a1 1 0 0 1 1 1v2H6V5a1 1 0 0 1 1-1zm5 16a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>`;
+                const accommodationIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 21H5a3 3 0 0 1-3-3V9a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v9a3 3 0 0 1-3 3zM4 9v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9H4zm16-4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v1z"/></svg>`;
+                const foodIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16 2H8C4.691 2 2 4.691 2 8v13a1 1 0 0 0 1 1h13c3.309 0 6-2.691 6-6V8c0-3.309-2.691-6-6-6zm4 13c0 2.206-1.794 4-4 4H4V8c0-2.206 1.794-4 4-4h8c2.206 0 4 1.794 4 4v7z"/><path d="M15.292 11.294 13 9v5h2v-3.585l2.708 2.707 1.414-1.414zM8 9h3v2H8z"/></svg>`;
+                const sightseeingIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5C5.925 5 1 12 1 12s4.925 7 11 7 11-7 11-7-4.925-7-11-7zm0 12c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5zm0-8c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3z"/></svg>`;
+                
+                if (mode === 'station') {
+                     let stationName = "Not Found";
+                     let stationCode = "N/A";
+                     // ---------------- Famous Monuments ----------------
+if (query.toLowerCase().includes("taj mahal")) { stationName = "Agra Cantt."; stationCode = "AGC"; }
+if (query.toLowerCase().includes("agra fort")) { stationName = "Agra Cantt."; stationCode = "AGC"; }
+if (query.toLowerCase().includes("red fort")) { stationName = "Old Delhi Junction"; stationCode = "DLI"; }
+if (query.toLowerCase().includes("qutub minar")) { stationName = "New Delhi"; stationCode = "NDLS"; }
+if (query.toLowerCase().includes("india gate")) { stationName = "New Delhi"; stationCode = "NDLS"; }
+if (query.toLowerCase().includes("lotus temple")) { stationName = "New Delhi"; stationCode = "NDLS"; }
+if (query.toLowerCase().includes("gateway of india")) { stationName = "Mumbai CST"; stationCode = "CSMT"; }
+if (query.toLowerCase().includes("victoria memorial")) { stationName = "Howrah Junction"; stationCode = "HWH"; }
+if (query.toLowerCase().includes("charminar")) { stationName = "Hyderabad Deccan"; stationCode = "HYB"; }
+if (query.toLowerCase().includes("golconda fort")) { stationName = "Hyderabad Deccan"; stationCode = "HYB"; }
+if (query.toLowerCase().includes("hawa mahal")) { stationName = "Jaipur Junction"; stationCode = "JP"; }
+if (query.toLowerCase().includes("amer fort")) { stationName = "Jaipur Junction"; stationCode = "JP"; }
+if (query.toLowerCase().includes("jantar mantar")) { stationName = "Jaipur Junction"; stationCode = "JP"; }
+if (query.toLowerCase().includes("umaid bhawan palace")) { stationName = "Jodhpur Junction"; stationCode = "JU"; }
+if (query.toLowerCase().includes("golden temple")) { stationName = "Amritsar Junction"; stationCode = "ASR"; }
+
+// ---------------- Temples & Jyotirlingas ----------------
+if (query.toLowerCase().includes("banke bihari")) { stationName = "Mathura Junction"; stationCode = "MTJ"; }
+if (query.toLowerCase().includes("kedarnath")) { stationName = "Rishikesh"; stationCode = "RKSH"; }
+if (query.toLowerCase().includes("badrinath")) { stationName = "Rishikesh"; stationCode = "RKSH"; }
+if (query.toLowerCase().includes("haridwar")) { stationName = "Haridwar"; stationCode = "HW"; }
+if (query.toLowerCase().includes("vaishno devi")) { stationName = "Katra"; stationCode = "SVDK"; }
+if (query.toLowerCase().includes("amarnath")) { stationName = "Jammu Tawi"; stationCode = "JAT"; }
+if (query.toLowerCase().includes("tirupati")) { stationName = "Tirupati"; stationCode = "TPTY"; }
+if (query.toLowerCase().includes("somnath")) { stationName = "Somnath"; stationCode = "SMNH"; }
+if (query.toLowerCase().includes("dwarka")) { stationName = "Dwarka"; stationCode = "DWK"; }
+if (query.toLowerCase().includes("shirdi")) { stationName = "Sainagar Shirdi"; stationCode = "SNSI"; }
+if (query.toLowerCase().includes("kashi vishwanath")) { stationName = "Varanasi Junction"; stationCode = "BSB"; }
+if (query.toLowerCase().includes("mahakaleshwar")) { stationName = "Ujjain Junction"; stationCode = "UJN"; }
+if (query.toLowerCase().includes("omkareshwar")) { stationName = "Omkareshwar Road"; stationCode = "OM"; }
+if (query.toLowerCase().includes("trimbakeshwar")) { stationName = "Nasik Road"; stationCode = "NK"; }
+if (query.toLowerCase().includes("bhimashankar")) { stationName = "Pune Junction"; stationCode = "PUNE"; }
+if (query.toLowerCase().includes("kedarnath")) { stationName = "Rishikesh"; stationCode = "RKSH"; }
+if (query.toLowerCase().includes("mallikarjuna")) { stationName = "Markapur Road"; stationCode = "MRK"; }
+if (query.toLowerCase().includes("nageshwar jyotirlinga")) { stationName = "Dwarka"; stationCode = "DWK"; }
+if (query.toLowerCase().includes("ramnathswamy")) { stationName = "Rameswaram"; stationCode = "RMM"; }
+if (query.toLowerCase().includes("grishneshwar")) { stationName = "Aurangabad"; stationCode = "AWB"; }
+if (query.toLowerCase().includes("lingaraj temple")) { stationName = "Bhubaneswar"; stationCode = "BBS"; }
+if (query.toLowerCase().includes("jagannath puri")) { stationName = "Puri"; stationCode = "PURI"; }
+if (query.toLowerCase().includes("konark sun temple")) { stationName = "Puri"; stationCode = "PURI"; }
+if (query.toLowerCase().includes("meenakshi temple")) { stationName = "Madurai Junction"; stationCode = "MDU"; }
+if (query.toLowerCase().includes("akshardham")) { stationName = "Gandhinagar Capital"; stationCode = "GNC"; }
+
+// ---------------- Hill Stations ----------------
+if (query.toLowerCase().includes("manali")) { stationName = "Joginder Nagar"; stationCode = "JDNX"; }
+if (query.toLowerCase().includes("shimla")) { stationName = "Shimla"; stationCode = "SML"; }
+if (query.toLowerCase().includes("dalhousie")) { stationName = "Pathankot"; stationCode = "PTK"; }
+if (query.toLowerCase().includes("mussoorie")) { stationName = "Dehradun"; stationCode = "DDN"; }
+if (query.toLowerCase().includes("nainital")) { stationName = "Kathgodam"; stationCode = "KGM"; }
+if (query.toLowerCase().includes("darjeeling")) { stationName = "New Jalpaiguri"; stationCode = "NJP"; }
+if (query.toLowerCase().includes("gangtok")) { stationName = "New Jalpaiguri"; stationCode = "NJP"; }
+if (query.toLowerCase().includes("ooty")) { stationName = "Mettupalayam"; stationCode = "MTP"; }
+if (query.toLowerCase().includes("kodaikanal")) { stationName = "Kodai Road"; stationCode = "KQN"; }
+if (query.toLowerCase().includes("coorg")) { stationName = "Mysore Junction"; stationCode = "MYS"; }
+if (query.toLowerCase().includes("mount abu")) { stationName = "Abu Road"; stationCode = "ABR"; }
+if (query.toLowerCase().includes("lavasa")) { stationName = "Pune Junction"; stationCode = "PUNE"; }
+if (query.toLowerCase().includes("pachmarhi")) { stationName = "Pipariya"; stationCode = "PPI"; }
+if (query.toLowerCase().includes("araku valley")) { stationName = "Araku"; stationCode = "ARK"; }
+
+// ---------------- Beaches ----------------
+if (query.toLowerCase().includes("baga beach")) { stationName = "Thivim"; stationCode = "THVM"; }
+if (query.toLowerCase().includes("calangute beach")) { stationName = "Thivim"; stationCode = "THVM"; }
+if (query.toLowerCase().includes("anjuna beach")) { stationName = "Thivim"; stationCode = "THVM"; }
+if (query.toLowerCase().includes("palolem beach")) { stationName = "Canacona"; stationCode = "CNO"; }
+if (query.toLowerCase().includes("varkala beach")) { stationName = "Varkala"; stationCode = "VAK"; }
+if (query.toLowerCase().includes("marina beach")) { stationName = "Chennai Central"; stationCode = "MAS"; }
+if (query.toLowerCase().includes("kovalam beach")) { stationName = "Thiruvananthapuram"; stationCode = "TVC"; }
+if (query.toLowerCase().includes("digha beach")) { stationName = "Digha"; stationCode = "DGHA"; }
+if (query.toLowerCase().includes("puri beach")) { stationName = "Puri"; stationCode = "PURI"; }
+
+// ---------------- National Parks & Nature ----------------
+if (query.toLowerCase().includes("gir national park")) { stationName = "Junagadh Junction"; stationCode = "JND"; }
+if (query.toLowerCase().includes("kaziranga")) { stationName = "Furkating Junction"; stationCode = "FKG"; }
+if (query.toLowerCase().includes("sundarbans")) { stationName = "Canning"; stationCode = "CG"; }
+if (query.toLowerCase().includes("ranthambore")) { stationName = "Sawai Madhopur"; stationCode = "SWM"; }
+if (query.toLowerCase().includes("jim corbett")) { stationName = "Ramnagar"; stationCode = "RMR"; }
+if (query.toLowerCase().includes("bandhavgarh")) { stationName = "Umaria"; stationCode = "UMR"; }
+if (query.toLowerCase().includes("kanha")) { stationName = "Jabalpur"; stationCode = "JBP"; }
+if (query.toLowerCase().includes("periyar")) { stationName = "Kottayam"; stationCode = "KTYM"; }
+if (query.toLowerCase().includes("bharatpur bird sanctuary")) { stationName = "Bharatpur Junction"; stationCode = "BTE"; }
+if (query.toLowerCase().includes("hemis national park")) { stationName = "Leh"; stationCode = "LEH"; }
+if (query.toLowerCase().includes("valley of flowers")) { stationName = "Rishikesh"; stationCode = "RKSH"; }
+if (query.toLowerCase().includes("majuli")) { stationName = "Jorhat Town"; stationCode = "JTTN"; }
+
+
+                     return `
+                        <div class="station-result-card">
+                            <p>Nearest station to <strong>${query}</strong> is:</p>
+                            <h2>${stationName} (${stationCode})</h2>
+                        </div>
+                     `;
+                }
+
+                let responseHTML = '<div class="gemini-response-elegant">';
+                if (query.toLowerCase().includes("kolkata")) {
+                    responseHTML += `
+                        <div class="itinerary-item">
+                            <div class="itinerary-icon">${transportIcon}</div>
+                            <div class="itinerary-content">
+                                <p class="day-title">Getting There</p>
+                                <p class="details"><b>Train (Recommended):</b> Rajdhani Express (12302) from New Delhi (NDLS) to Howrah (HWH). <span>(Approx. 17 hours)</span></p>
+                                <p class="details"><b>Flight:</b> Multiple daily flights from Delhi (DEL) to Kolkata (CCU). <span>(Approx. 2 hours)</span></p>
+                            </div>
+                        </div>
+                        <div class="itinerary-item">
+                            <div class="itinerary-icon">${accommodationIcon}</div>
+                            <div class="itinerary-content">
+                                <p class="day-title">Where to Stay</p>
+                                <p class="details"><b>Central:</b> Stay near Park Street for easy access to pandals and restaurants.</p>
+                                <p class="details"><b>South Kolkata:</b> Find hotels in Gariahat or Ballygunge for a more traditional Puja experience.</p>
+                            </div>
+                        </div>
+                         <div class="itinerary-item">
+                            <div class="itinerary-icon">${sightseeingIcon}</div>
+                            <div class="itinerary-content">
+                                <p class="day-title">Day 1 (Saptami)</p>
+                                <p class="details">Arrive in Kolkata and begin pandal hopping in South Kolkata's famous locations.</p>
+                                <div class="tags"><span class="tag">Sightseeing</span><span class="tag">Food</span></div>
+                            </div>
+                        </div>
+                         <div class="itinerary-item">
+                            <div class="itinerary-icon">${foodIcon}</div>
+                            <div class="itinerary-content">
+                                <p class="day-title">Day 2 (Ashtami)</p>
+                                <p class="details">Visit iconic pandals in North Kolkata (e.g., Bagbazar). Experience the evening Aarti and enjoy street food.</p>
+                                <div class="tags"><span class="tag">Culture</span><span class="tag">Food</span></div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                     return `<p class="text-center text-gray-600">Please try another prompt to see a detailed itinerary!</p>`;
+                }
+                
+                responseHTML += '</div>';
+                return responseHTML;
+            }
+        });
+    </script>
+</body>
+</html>
