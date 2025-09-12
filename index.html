@@ -706,91 +706,9 @@
                 if (mode === 'station') {
                      let stationName = "Not Found";
                      let stationCode = "N/A";
-                     // ---------------- Famous Monuments ----------------
-if (query.toLowerCase().includes("taj mahal")) { stationName = "Agra Cantt."; stationCode = "AGC"; }
-if (query.toLowerCase().includes("agra fort")) { stationName = "Agra Cantt."; stationCode = "AGC"; }
-if (query.toLowerCase().includes("red fort")) { stationName = "Old Delhi Junction"; stationCode = "DLI"; }
-if (query.toLowerCase().includes("qutub minar")) { stationName = "New Delhi"; stationCode = "NDLS"; }
-if (query.toLowerCase().includes("india gate")) { stationName = "New Delhi"; stationCode = "NDLS"; }
-if (query.toLowerCase().includes("lotus temple")) { stationName = "New Delhi"; stationCode = "NDLS"; }
-if (query.toLowerCase().includes("gateway of india")) { stationName = "Mumbai CST"; stationCode = "CSMT"; }
-if (query.toLowerCase().includes("victoria memorial")) { stationName = "Howrah Junction"; stationCode = "HWH"; }
-if (query.toLowerCase().includes("charminar")) { stationName = "Hyderabad Deccan"; stationCode = "HYB"; }
-if (query.toLowerCase().includes("golconda fort")) { stationName = "Hyderabad Deccan"; stationCode = "HYB"; }
-if (query.toLowerCase().includes("hawa mahal")) { stationName = "Jaipur Junction"; stationCode = "JP"; }
-if (query.toLowerCase().includes("amer fort")) { stationName = "Jaipur Junction"; stationCode = "JP"; }
-if (query.toLowerCase().includes("jantar mantar")) { stationName = "Jaipur Junction"; stationCode = "JP"; }
-if (query.toLowerCase().includes("umaid bhawan palace")) { stationName = "Jodhpur Junction"; stationCode = "JU"; }
-if (query.toLowerCase().includes("golden temple")) { stationName = "Amritsar Junction"; stationCode = "ASR"; }
-
-// ---------------- Temples & Jyotirlingas ----------------
-if (query.toLowerCase().includes("banke bihari")) { stationName = "Mathura Junction"; stationCode = "MTJ"; }
-if (query.toLowerCase().includes("kedarnath")) { stationName = "Rishikesh"; stationCode = "RKSH"; }
-if (query.toLowerCase().includes("badrinath")) { stationName = "Rishikesh"; stationCode = "RKSH"; }
-if (query.toLowerCase().includes("haridwar")) { stationName = "Haridwar"; stationCode = "HW"; }
-if (query.toLowerCase().includes("vaishno devi")) { stationName = "Katra"; stationCode = "SVDK"; }
-if (query.toLowerCase().includes("amarnath")) { stationName = "Jammu Tawi"; stationCode = "JAT"; }
-if (query.toLowerCase().includes("tirupati")) { stationName = "Tirupati"; stationCode = "TPTY"; }
-if (query.toLowerCase().includes("somnath")) { stationName = "Somnath"; stationCode = "SMNH"; }
-if (query.toLowerCase().includes("dwarka")) { stationName = "Dwarka"; stationCode = "DWK"; }
-if (query.toLowerCase().includes("shirdi")) { stationName = "Sainagar Shirdi"; stationCode = "SNSI"; }
-if (query.toLowerCase().includes("kashi vishwanath")) { stationName = "Varanasi Junction"; stationCode = "BSB"; }
-if (query.toLowerCase().includes("mahakaleshwar")) { stationName = "Ujjain Junction"; stationCode = "UJN"; }
-if (query.toLowerCase().includes("omkareshwar")) { stationName = "Omkareshwar Road"; stationCode = "OM"; }
-if (query.toLowerCase().includes("trimbakeshwar")) { stationName = "Nasik Road"; stationCode = "NK"; }
-if (query.toLowerCase().includes("bhimashankar")) { stationName = "Pune Junction"; stationCode = "PUNE"; }
-if (query.toLowerCase().includes("kedarnath")) { stationName = "Rishikesh"; stationCode = "RKSH"; }
-if (query.toLowerCase().includes("mallikarjuna")) { stationName = "Markapur Road"; stationCode = "MRK"; }
-if (query.toLowerCase().includes("nageshwar jyotirlinga")) { stationName = "Dwarka"; stationCode = "DWK"; }
-if (query.toLowerCase().includes("ramnathswamy")) { stationName = "Rameswaram"; stationCode = "RMM"; }
-if (query.toLowerCase().includes("grishneshwar")) { stationName = "Aurangabad"; stationCode = "AWB"; }
-if (query.toLowerCase().includes("lingaraj temple")) { stationName = "Bhubaneswar"; stationCode = "BBS"; }
-if (query.toLowerCase().includes("jagannath puri")) { stationName = "Puri"; stationCode = "PURI"; }
-if (query.toLowerCase().includes("konark sun temple")) { stationName = "Puri"; stationCode = "PURI"; }
-if (query.toLowerCase().includes("meenakshi temple")) { stationName = "Madurai Junction"; stationCode = "MDU"; }
-if (query.toLowerCase().includes("akshardham")) { stationName = "Gandhinagar Capital"; stationCode = "GNC"; }
-
-// ---------------- Hill Stations ----------------
-if (query.toLowerCase().includes("manali")) { stationName = "Joginder Nagar"; stationCode = "JDNX"; }
-if (query.toLowerCase().includes("shimla")) { stationName = "Shimla"; stationCode = "SML"; }
-if (query.toLowerCase().includes("dalhousie")) { stationName = "Pathankot"; stationCode = "PTK"; }
-if (query.toLowerCase().includes("mussoorie")) { stationName = "Dehradun"; stationCode = "DDN"; }
-if (query.toLowerCase().includes("nainital")) { stationName = "Kathgodam"; stationCode = "KGM"; }
-if (query.toLowerCase().includes("darjeeling")) { stationName = "New Jalpaiguri"; stationCode = "NJP"; }
-if (query.toLowerCase().includes("gangtok")) { stationName = "New Jalpaiguri"; stationCode = "NJP"; }
-if (query.toLowerCase().includes("ooty")) { stationName = "Mettupalayam"; stationCode = "MTP"; }
-if (query.toLowerCase().includes("kodaikanal")) { stationName = "Kodai Road"; stationCode = "KQN"; }
-if (query.toLowerCase().includes("coorg")) { stationName = "Mysore Junction"; stationCode = "MYS"; }
-if (query.toLowerCase().includes("mount abu")) { stationName = "Abu Road"; stationCode = "ABR"; }
-if (query.toLowerCase().includes("lavasa")) { stationName = "Pune Junction"; stationCode = "PUNE"; }
-if (query.toLowerCase().includes("pachmarhi")) { stationName = "Pipariya"; stationCode = "PPI"; }
-if (query.toLowerCase().includes("araku valley")) { stationName = "Araku"; stationCode = "ARK"; }
-
-// ---------------- Beaches ----------------
-if (query.toLowerCase().includes("baga beach")) { stationName = "Thivim"; stationCode = "THVM"; }
-if (query.toLowerCase().includes("calangute beach")) { stationName = "Thivim"; stationCode = "THVM"; }
-if (query.toLowerCase().includes("anjuna beach")) { stationName = "Thivim"; stationCode = "THVM"; }
-if (query.toLowerCase().includes("palolem beach")) { stationName = "Canacona"; stationCode = "CNO"; }
-if (query.toLowerCase().includes("varkala beach")) { stationName = "Varkala"; stationCode = "VAK"; }
-if (query.toLowerCase().includes("marina beach")) { stationName = "Chennai Central"; stationCode = "MAS"; }
-if (query.toLowerCase().includes("kovalam beach")) { stationName = "Thiruvananthapuram"; stationCode = "TVC"; }
-if (query.toLowerCase().includes("digha beach")) { stationName = "Digha"; stationCode = "DGHA"; }
-if (query.toLowerCase().includes("puri beach")) { stationName = "Puri"; stationCode = "PURI"; }
-
-// ---------------- National Parks & Nature ----------------
-if (query.toLowerCase().includes("gir national park")) { stationName = "Junagadh Junction"; stationCode = "JND"; }
-if (query.toLowerCase().includes("kaziranga")) { stationName = "Furkating Junction"; stationCode = "FKG"; }
-if (query.toLowerCase().includes("sundarbans")) { stationName = "Canning"; stationCode = "CG"; }
-if (query.toLowerCase().includes("ranthambore")) { stationName = "Sawai Madhopur"; stationCode = "SWM"; }
-if (query.toLowerCase().includes("jim corbett")) { stationName = "Ramnagar"; stationCode = "RMR"; }
-if (query.toLowerCase().includes("bandhavgarh")) { stationName = "Umaria"; stationCode = "UMR"; }
-if (query.toLowerCase().includes("kanha")) { stationName = "Jabalpur"; stationCode = "JBP"; }
-if (query.toLowerCase().includes("periyar")) { stationName = "Kottayam"; stationCode = "KTYM"; }
-if (query.toLowerCase().includes("bharatpur bird sanctuary")) { stationName = "Bharatpur Junction"; stationCode = "BTE"; }
-if (query.toLowerCase().includes("hemis national park")) { stationName = "Leh"; stationCode = "LEH"; }
-if (query.toLowerCase().includes("valley of flowers")) { stationName = "Rishikesh"; stationCode = "RKSH"; }
-if (query.toLowerCase().includes("majuli")) { stationName = "Jorhat Town"; stationCode = "JTTN"; }
-
+                     if (query.toLowerCase().includes("taj mahal")) { stationName = "Agra Cantt."; stationCode = "AGC"; }
+                     if (query.toLowerCase().includes("golden temple")) { stationName = "Amritsar Junction"; stationCode = "ASR"; }
+                     if (query.toLowerCase().includes("banke bihari")) { stationName = "Mathura Junction"; stationCode = "MTJ"; }
 
                      return `
                         <div class="station-result-card">
@@ -847,3 +765,4 @@ if (query.toLowerCase().includes("majuli")) { stationName = "Jorhat Town"; stati
     </script>
 </body>
 </html>
+
