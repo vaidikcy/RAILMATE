@@ -149,7 +149,8 @@
         
         /* --- AI Planner Styles (ELEGANT REVAMP) --- */
         #ai-planner-output { min-height: 200px; transition: all 0.5s ease; }
-        .loader { width: 48px; height: 48px; border: 5px solid rgba(0,0,0,0.1); border-bottom-color: var(--primary-orange); border-radius: 50%; display: inline-block; box-sizing: border-box; animation: rotation 1s linear infinite; }
+        .loader { width: 48px; height: 48px; border: 5px solid rgba(255,255,255,0.2); border-bottom-color: var(--primary-orange); border-radius: 50%; display: inline-block; box-sizing: border-box; animation: rotation 1s linear infinite; }
+        .dark .loader { border: 5px solid rgba(0,0,0,0.1); border-bottom-color: var(--primary-orange); }
         @keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         
         .gemini-response-elegant { padding-top: 0.5rem; }
@@ -196,7 +197,6 @@
 </head>
 <body class="overflow-x-hidden">
 
-    <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/80">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-xl font-bold tracking-tight text-gray-800">
@@ -216,7 +216,6 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section class="min-h-screen flex items-center justify-center text-center pt-20 px-4 relative isolate">
              <div class="absolute inset-0 -z-10 hero-bg"></div>
             <div class="max-w-4xl mx-auto">
@@ -235,7 +234,6 @@
             </div>
         </section>
 
-        <!-- Features Section -->
         <section id="features" class="py-20 lg:py-32 section-bg-alt">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16">
@@ -243,7 +241,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Feature 1: Smart Ticketing (UPGRADED) -->
                     <div class="animated-element feature-card p-8 col-span-1 md:col-span-2 lg:col-span-3">
                         <div>
                             <span class="inline-block bg-green-100 text-green-700 text-sm font-semibold px-3 py-1 rounded-full mb-3">Booking Reimagined</span>
@@ -262,21 +259,20 @@
                                     </div>
                                     <div class="relative md:col-span-1">
                                         <label for="dep-date" class="absolute -top-2 left-3 bg-white px-1 text-xs text-gray-500">Departure</label>
-                                        <input type="date" id="dep-date" value="2025-09-04" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 outline-none text-gray-700">
+                                        <input type="date" id="dep-date" value="2025-09-11" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 outline-none text-gray-700">
                                     </div>
                                     <button class="w-full md:col-span-1 bg-gray-900 text-white font-semibold p-3 rounded-lg hover:bg-black transition-transform hover:scale-105">
                                         Search Trains
                                     </button>
                                </div>
-                               <!-- Selected Option -->
                                <div class="p-4 border-b-4 border-green-500">
                                     <div class="flex justify-between items-center">
                                         <div>
-                                            <p class="font-bold text-lg text-green-700">12951 Mumbai Rajdhani</p>
-                                            <p class="text-sm text-gray-500">16:00 (NDLS) → 08:15 (BCT) <span>• 16h 15m</span></p>
+                                            <p class="font-bold text-lg text-green-700">12952 Mumbai Rajdhani</p>
+                                            <p class="text-sm text-gray-500">16:55 (NDLS) → 08:35 (BCT) <span>• 15h 40m</span></p>
                                         </div>
                                         <div class="text-right">
-                                            <p class="font-semibold text-xl">From ₹2,955</p>
+                                            <p class="font-semibold text-xl">From ₹3,150</p>
                                         </div>
                                     </div>
                                     <div class="mt-4 flex space-x-4 text-xs text-gray-600">
@@ -284,13 +280,12 @@
                                         <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full">✓ Food Included</span>
                                     </div>
                                </div>
-                               <!-- Other Options -->
                                <div class="p-4">
                                     <h4 class="font-semibold text-gray-500 mb-2 text-sm">OTHER OPTIONS FOR TODAY</h4>
                                     <div class="flex justify-between items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer">
                                         <div>
-                                            <p class="font-bold">12909 NZM BDTS Garib Rath</p>
-                                            <p class="text-sm text-gray-500">17:15 (NZM) → 09:15 (BDTS) <span>• 16h 00m</span></p>
+                                            <p class="font-bold">12910 NZM BDTS Garib Rath</p>
+                                            <p class="text-sm text-gray-500">16:30 (NZM) → 09:15 (BDTS) <span>• 16h 45m</span></p>
                                         </div>
                                         <div class="text-right">
                                             <p class="font-semibold">From ₹1,570</p>
@@ -298,8 +293,8 @@
                                     </div>
                                      <div class="flex justify-between items-center p-3 rounded-lg bg-red-50 opacity-70">
                                         <div>
-                                            <p class="font-bold text-gray-500">22221 NZM CSMT Rajdhani</p>
-                                            <p class="text-sm text-gray-400">16:55 (NZM) → 11:50 (CSMT)</p>
+                                            <p class="font-bold text-gray-500">22222 CSMT Rajdhani</p>
+                                            <p class="text-sm text-gray-400">17:15 (NZM) → 11:50 (CSMT)</p>
                                         </div>
                                         <div class="text-right">
                                             <p class="font-semibold text-red-600">Regret/WL</p>
@@ -307,13 +302,12 @@
                                     </div>
                                </div>
                                <div class="bg-orange-50 p-3 text-center text-sm text-orange-800 border-t">
-                                    <strong>Next Day Alternative:</strong> Tejas Express (Thu, 09:30, ₹2,550)
+                                    <strong>Next Day Alternative:</strong> Tejas Express (Fri, 09:30, ₹2,550)
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Feature 2: Coach Finder -->
                     <div class="animated-element feature-card p-8 col-span-1 lg:col-span-2" style="transition-delay: 0.1s;">
                         <span class="inline-block bg-purple-100 text-purple-700 text-sm font-semibold px-3 py-1 rounded-full mb-3">Effortless Navigation</span>
                         <h3 class="text-2xl font-bold mb-2">Coach Finder</h3>
@@ -337,30 +331,29 @@
                         </div>
                     </div>
 
-                    <!-- Feature 3: Personalized Alerts -->
                     <div class="animated-element feature-card p-0 col-span-1 lg:col-span-1 flex flex-col items-center" style="transition-delay: 0.2s;">
                         <div class="p-8 pb-0 w-full">
                             <span class="inline-block bg-yellow-100 text-yellow-700 text-sm font-semibold px-3 py-1 rounded-full mb-3">Stay Informed</span>
                             <h3 class="text-2xl font-bold mb-2">Personalized Alerts</h3>
                             <p class="text-gray-500">Get simplified, crucial updates right on your lock screen.</p>
                         </div>
-                        <div class="w-full h-full flex justify-center items-center p-6 pt-2">
+                        <div class="w-full h-full flex justify-center items-end p-6 pt-2">
                            <div class="iphone-mockup">
                                 <div class="iphone-screen">
                                     <div class="iphone-time-display">
-                                        <div class="time">13:53</div>
-                                        <div class="date">Thursday, 4 September</div>
+                                        <div class="time">15:53</div>
+                                        <div class="date">Thursday, 11 September</div>
                                     </div>
                                     <div class="notification-stack">
                                         <div id="simplified-announcement" class="notification-bubble">
                                              <div class="notification-header">
-                                                <div class="app-icon">🚆</div>
-                                                <span class="app-name">RailMate</span>
-                                                <span class="time-ago">now</span>
+                                                  <div class="app-icon">🚆</div>
+                                                  <span class="app-name">RailMate</span>
+                                                  <span class="time-ago">now</span>
                                              </div>
                                              <div class="notification-body">
-                                                <p class="title">Platform Change</p>
-                                                <p class="message">Your 2:00 PM train, 12952 Rajdhani Exp to Mumbai, will now depart from Platform 5.</p>
+                                                  <p class="title">Platform Change</p>
+                                                  <p class="message">Your 4:55 PM train, 12952 Rajdhani Exp to Mumbai, will now depart from Platform 5.</p>
                                              </div>
                                         </div>
                                     </div>
@@ -368,63 +361,78 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Feature 4: Live Train Status (UPGRADED) -->
-                    <div class="animated-element feature-card p-8 col-span-1 lg:col-span-3" style="transition-delay: 0.3s;">
-                        <div class="flex justify-between items-center mb-4">
-                            <div>
-                                <span class="inline-block bg-cyan-100 text-cyan-700 text-sm font-semibold px-3 py-1 rounded-full">Real-Time Tracking</span>
-                                <h3 class="text-2xl font-bold mt-2">Never Lose Track</h3>
-                            </div>
-                            <div class="flex border border-gray-200 rounded-lg p-1 bg-gray-100">
-                                <button id="status-tab-live" class="planner-tab text-sm active bg-white rounded-md shadow">Live Status</button>
-                                <button id="status-tab-pnr" class="planner-tab text-sm">PNR Status</button>
-                            </div>
-                        </div>
-
-                        <!-- Live Status Content -->
-                        <div id="live-status-content">
-                            <div class="live-status-card">
-                                 <div class="live-status-header">
-                                    <div>
-                                        <h4 class="font-bold text-lg">Mumbai Rajdhani / 12951</h4>
-                                        <p class="text-sm text-gray-400">to Mumbai Central (BCT)</p>
-                                    </div>
-                                    <div class="text-right">
-                                        <p class="font-semibold text-green-400">On Time</p>
-                                        <p class="text-xs text-gray-500">Updated 1m ago</p>
-                                    </div>
-                                 </div>
-                                 <div class="relative pt-10 pb-2 text-white">
-                                    <div class="live-train-path">
-                                        <div class="live-train-progress"></div>
-                                        <div class="live-train-icon">
-                                            <div class="blinking-dot"></div>
-                                        </div>
-                                    </div>
-                                     <div class="flex justify-between text-xs font-bold mt-2">
-                                        <span>New Delhi</span>
-                                        <span class="absolute left-1/2 -translate-x-1/2 -top-1">Surat</span>
-                                        <span>Mumbai</span>
-                                     </div>
-                                     <div class="text-center mt-6">
-                                         <p class="text-gray-400">Next Stop: Surat</p>
-                                         <p class="text-2xl font-bold">Arriving in 12 mins</p>
-                                     </div>
-                                 </div>
+                </div> <div class="animated-element feature-card p-8 mt-8" style="transition-delay: 0.3s;">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <span class="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-3 py-1 rounded-full mb-3">Intelligent Assist</span>
+                            <h3 class="text-2xl font-bold mb-2">Leave on Time, Every Time</h3>
+                            <p class="text-gray-500 mb-6">Enter your train, and we'll tell you the perfect time to leave, factoring in live traffic, weather, and station rush.</p>
+                            <div class="space-y-3">
+                                <input id="commute-train-no" type="text" placeholder="Train Number (e.g., 12952)" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 outline-none">
+                                <input id="commute-location" type="text" value="Chandigarh, Punjab, India" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 outline-none">
+                                <button id="commute-btn" class="w-full bg-gray-900 text-white font-semibold p-3 rounded-lg hover:bg-black transition-transform hover:scale-105">Calculate My Commute</button>
                             </div>
                         </div>
+                        <div>
+                            <div id="commute-output" class="bg-gray-800 text-white rounded-xl p-6 flex items-center justify-center transition-all" style="min-height: 250px;">
+                                <p class="text-center text-gray-400 text-sm">Your personalized commute plan will appear here.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                        <!-- PNR Status Content -->
-                        <div id="pnr-status-content" class="hidden">
-                            <div class="bg-gray-50 p-6 rounded-2xl">
-                                <div class="relative mb-4">
-                                    <input id="pnr-input" type="text" placeholder="Enter 10-digit PNR" class="w-full pl-5 pr-32 py-4 rounded-full border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition text-lg">
-                                    <button id="pnr-btn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-900 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-black transition-transform hover:scale-105">Check</button>
-                                </div>
-                                <div id="pnr-output" class="bg-white p-6 rounded-lg text-left mt-4">
-                                     <p class="text-center text-gray-500">Your PNR status will appear here...</p>
-                                </div>
+                <div class="animated-element feature-card p-8 mt-8" style="transition-delay: 0.4s;">
+                    <div class="flex justify-between items-center mb-4">
+                        <div>
+                            <span class="inline-block bg-cyan-100 text-cyan-700 text-sm font-semibold px-3 py-1 rounded-full">Real-Time Tracking</span>
+                            <h3 class="text-2xl font-bold mt-2">Never Lose Track</h3>
+                        </div>
+                        <div class="flex border border-gray-200 rounded-lg p-1 bg-gray-100">
+                            <button id="status-tab-live" class="planner-tab text-sm active bg-white rounded-md shadow">Live Status</button>
+                            <button id="status-tab-pnr" class="planner-tab text-sm">PNR Status</button>
+                        </div>
+                    </div>
+
+                    <div id="live-status-content">
+                        <div class="live-status-card">
+                             <div class="live-status-header">
+                                 <div>
+                                     <h4 class="font-bold text-lg">12952 Mumbai Rajdhani</h4>
+                                     <p class="text-sm text-gray-400">to Mumbai Central (BCT)</p>
+                                 </div>
+                                 <div class="text-right">
+                                     <p class="font-semibold text-green-400">On Time</p>
+                                     <p class="text-xs text-gray-500">Updated 1m ago</p>
+                                 </div>
+                             </div>
+                             <div class="relative pt-10 pb-2 text-white">
+                                 <div class="live-train-path">
+                                     <div class="live-train-progress"></div>
+                                     <div class="live-train-icon">
+                                         <div class="blinking-dot"></div>
+                                     </div>
+                                 </div>
+                                  <div class="flex justify-between text-xs font-bold mt-2">
+                                     <span>New Delhi</span>
+                                     <span class="absolute left-1/2 -translate-x-1/2 -top-1">Kota</span>
+                                     <span>Mumbai</span>
+                                  </div>
+                                  <div class="text-center mt-6">
+                                     <p class="text-gray-400">Next Stop: Kota JN</p>
+                                     <p class="text-2xl font-bold">Arriving in 12 mins</p>
+                                  </div>
+                             </div>
+                        </div>
+                    </div>
+
+                    <div id="pnr-status-content" class="hidden">
+                        <div class="bg-gray-50 p-6 rounded-2xl">
+                            <div class="relative mb-4">
+                                <input id="pnr-input" type="text" placeholder="Enter 10-digit PNR" class="w-full pl-5 pr-32 py-4 rounded-full border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition text-lg">
+                                <button id="pnr-btn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-900 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-black transition-transform hover:scale-105">Check</button>
+                            </div>
+                            <div id="pnr-output" class="bg-white p-6 rounded-lg text-left mt-4">
+                                 <p class="text-center text-gray-500">Your PNR status will appear here...</p>
                             </div>
                         </div>
                     </div>
@@ -432,7 +440,6 @@
             </div>
         </section>
         
-        <!-- AI Trip Planner Section -->
         <section id="ai-planner" class="py-20 lg:py-24 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-12">
@@ -440,22 +447,19 @@
                     <p class="animated-element text-lg text-gray-500 mt-4" style="transition-delay: 0.1s;">Dreaming of a trip but dread the planning? Describe your ideal getaway—from a spiritual journey to Vrindavan to a vibrant week in Goa—and let our AI craft a complete, rail-centric travel plan just for you.</p>
                 </div>
                 <div class="animated-element max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-2xl border" style="transition-delay: 0.2s;">
-                    <!-- Planner Tabs -->
                     <div class="flex justify-center border-b mb-6">
                         <button id="tab-itinerary" class="planner-tab active">Trip Itinerary</button>
                         <button id="tab-station" class="planner-tab">Nearest Station</button>
                     </div>
 
-                    <!-- Input Area -->
                     <div class="relative mb-4">
-                        <input id="planner-input" type="text" placeholder="e.g., Chandigarh to Goa" class="w-full pl-5 pr-32 py-4 rounded-full border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition text-lg">
+                        <input id="planner-input" type="text" placeholder="e.g., Mumbai to Goa" class="w-full pl-5 pr-32 py-4 rounded-full border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition text-lg">
                         <button id="planner-btn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-900 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-black transition-transform hover:scale-105">Generate</button>
                     </div>
                      <div id="planner-examples" class="text-center text-sm text-gray-400">
-                        Try: <button class="hover:text-orange-500">Mumbai to Kerala</button> &middot; <button class="hover:text-orange-500">Delhi to Kolkata</button>
+                        Try: <button class="hover:text-orange-500">Chandigarh to Saharanpur</button> &middot; <button class="hover:text-orange-500">Delhi to Kolkata</button>
                     </div>
                     
-                    <!-- Output -->
                     <div id="ai-planner-output" class="bg-gray-50 p-6 rounded-lg text-left mt-6">
                         <p class="text-center text-gray-500">Your personalized travel plan will appear here...</p>
                     </div>
@@ -463,7 +467,6 @@
             </div>
         </section>
 
-        <!-- User Journey Section -->
         <section id="journey" class="py-20 lg:py-32 section-bg-alt">
            <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16">
@@ -473,42 +476,37 @@
                 <div class="relative">
                     <div class="hidden lg:block absolute top-8 left-0 w-full h-1 journey-line" style="transform: translateY(-50%); z-index: 0;"></div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 relative">
-                        <!-- Step 1 -->
                         <div class="animated-element text-center z-10" style="transition-delay: 0s;">
                            <div class="flex items-center justify-center bg-blue-100 text-blue-600 w-16 h-16 rounded-full mx-auto mb-4 border-4 border-gray-100 shadow-md">
-                               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                            </div>
                            <h3 class="font-bold mb-1">Book Ticket</h3>
                            <p class="text-sm text-gray-500">User books a ticket via the Smart Calendar.</p>
                         </div>
-                        <!-- Step 2 -->
                         <div class="animated-element text-center z-10" style="transition-delay: 0.1s;">
                            <div class="flex items-center justify-center bg-green-100 text-green-600 w-16 h-16 rounded-full mx-auto mb-4 border-4 border-gray-100 shadow-md">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.33-10.5c.2-.05.39-.1.59-.15C17.7 8.05 19 7.15 19 6a3 3 0 0 0-3-3c-1.12 0-2.25.4-3.17 1.25M12 12v9"></path><path d="M21 12h-2.5a1.5 1.5 0 0 0-1.5 1.5v0a1.5 1.5 0 0 0 1.5 1.5H21"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.33-10.5c.2-.05.39-.1.59-.15C17.7 8.05 19 7.15 19 6a3 3 0 0 0-3-3c-1.12 0-2.25.4-3.17 1.25M12 12v9"></path><path d="M21 12h-2.5a1.5 1.5 0 0 0-1.5 1.5v0a1.5 1.5 0 0 0 1.5 1.5H21"></path></svg>
                            </div>
                            <h3 class="font-bold mb-1">Plan Trip with AI</h3>
                            <p class="text-sm text-gray-500">Generates a custom itinerary for the destination.</p>
                         </div>
-                        <!-- Step 3 -->
                         <div class="animated-element text-center z-10" style="transition-delay: 0.2s;">
                            <div class="flex items-center justify-center bg-yellow-100 text-yellow-600 w-16 h-16 rounded-full mx-auto mb-4 border-4 border-gray-100 shadow-md">
-                               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
                            </div>
                            <h3 class="font-bold mb-1">Get Notifications</h3>
                            <p class="text-sm text-gray-500">Gets AI-simplified alerts on platform changes.</p>
                         </div>
-                        <!-- Step 4 -->
                         <div class="animated-element text-center z-10" style="transition-delay: 0.3s;">
                            <div class="flex items-center justify-center bg-purple-100 text-purple-600 w-16 h-16 rounded-full mx-auto mb-4 border-4 border-gray-100 shadow-md">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
                            </div>
                            <h3 class="font-bold mb-1">Get AR Coach Guide</h3>
                            <p class="text-sm text-gray-500">Receives AR directions to their coach on arrival.</p>
                         </div>
-                        <!-- Step 5 -->
                         <div class="animated-element text-center z-10" style="transition-delay: 0.4s;">
                            <div class="flex items-center justify-center bg-red-100 text-red-600 w-16 h-16 rounded-full mx-auto mb-4 border-4 border-gray-100 shadow-md">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                            </div>
                            <h3 class="font-bold mb-1">Backup Option</h3>
                            <p class="text-sm text-gray-500">If missed, the app shows the next available train.</p>
@@ -518,7 +516,6 @@
            </div>
         </section>
         
-        <!-- Roadmap Section -->
         <section id="roadmap" class="py-20 lg:py-24 bg-white">
              <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
@@ -549,7 +546,8 @@
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
                     } else {
-                        entry.target.classList.remove('visible');
+                        // Keep elements visible once they have appeared
+                        // entry.target.classList.remove('visible');
                     }
                 });
             }, { threshold: 0.1 });
@@ -613,7 +611,7 @@
                     pnrOutput.innerHTML = '<p class="text-center text-red-500">Please enter a valid 10-digit PNR.</p>';
                     return;
                 }
-                pnrOutput.innerHTML = '<div class="flex justify-center items-center p-8"><div class="loader"></div></div>';
+                pnrOutput.innerHTML = '<div class="flex justify-center items-center p-8 dark"><div class="loader"></div></div>';
                 
                 // Simulate API call
                 await new Promise(resolve => setTimeout(resolve, 1500));
@@ -638,6 +636,73 @@
                 }
                 pnrOutput.innerHTML = resultHTML;
             });
+            
+            // --- [NEW] SMART COMMUTE LOGIC ---
+            const commuteBtn = document.getElementById('commute-btn');
+            const commuteTrainInput = document.getElementById('commute-train-no');
+            const commuteLocationInput = document.getElementById('commute-location');
+            const commuteOutput = document.getElementById('commute-output');
+            
+            commuteBtn.addEventListener('click', async () => {
+                const trainNo = commuteTrainInput.value;
+                const location = commuteLocationInput.value;
+
+                if (!trainNo || !location) {
+                    commuteOutput.innerHTML = '<p class="text-center text-red-400">Please enter train number and location.</p>';
+                    return;
+                }
+                
+                commuteOutput.innerHTML = '<div class="flex justify-center items-center"><div class="loader"></div></div>';
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                // --- Mock Data Simulation ---
+                const travelTimeMins = 25; // 25 mins from Chandigarh to Station
+                const bufferMins = 30; // 30 mins buffer for crowd, weather etc.
+                const trainDeparture = new Date('2025-09-11T16:55:00'); // Mock departure for Rajdhani at 4:55 PM
+
+                const leaveByTime = new Date(trainDeparture.getTime() - (travelTimeMins + bufferMins) * 60000);
+                const arrivalTime = new Date(leaveByTime.getTime() + travelTimeMins * 60000);
+
+                const formatTime = (date) => date.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true });
+
+                const resultHTML = `
+                    <div class="flex flex-col gap-4 text-left w-full">
+                        <div class="text-center">
+                            <p class="text-sm text-orange-400 font-semibold uppercase tracking-wider">Leave By</p>
+                            <p class="text-5xl font-extrabold tracking-tighter">${formatTime(leaveByTime)}</p>
+                        </div>
+                        <div class="text-sm border-t border-gray-600 pt-3 space-y-1.5">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-400">Est. Travel Time:</span>
+                                <span class="font-bold">${travelTimeMins} mins</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-400">Est. Station Arrival:</span>
+                                <span class="font-bold">${formatTime(arrivalTime)}</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-400">Train Departure:</span>
+                                <span class="font-bold">${formatTime(trainDeparture)}</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-around items-center text-xs border-t border-gray-600 pt-3">
+                            <div class="text-center text-green-400 flex flex-col items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd" /></svg>
+                                <span>Light Traffic</span>
+                            </div>
+                            <div class="text-center text-blue-300 flex flex-col items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 3.5a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V4.25A.75.75 0 0110 3.5zM10 8.5a.75.75 0 01.75.75v5a.75.75 0 01-1.5 0V9.25A.75.75 0 0110 8.5zM7.25 5.5a.75.75 0 00-1.5 0v1.5a.75.75 0 001.5 0V5.5zM12.75 5.5a.75.75 0 00-1.5 0v1.5a.75.75 0 001.5 0V5.5zM5 10a.75.75 0 01.75-.75h1.5a.75.75 0 010 1.5H5.75A.75.75 0 015 10zm8.5 0a.75.75 0 01.75-.75h1.5a.75.75 0 010 1.5h-1.5a.75.75 0 01-.75-.75zM10 18a8 8 0 100-16 8 8 0 000 16z" /></svg>
+                                <span>Clear Skies</span>
+                            </div>
+                            <div class="text-center text-yellow-400 flex flex-col items-center gap-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M7 8a3 3 0 100-6 3 3 0 000 6zM14.5 9a3.5 3.5 0 100-7 3.5 3.5 0 000 7zM1.146 8.854a.5.5 0 010-.708l4-4a.5.5 0 11.708.708L2.207 8.5l3.647 3.646a.5.5 0 01-.708.708l-4-4zM18.854 8.146a.5.5 0 010 .708l-4 4a.5.5 0 01-.708-.708L17.793 8.5l-3.647-3.646a.5.5 0 11.708-.708l4 4z" /></svg>
+                                <span>Low Rush</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                commuteOutput.innerHTML = resultHTML;
+            });
 
             // --- AI PLANNER LOGIC ---
             const plannerBtn = document.getElementById('planner-btn');
@@ -655,7 +720,7 @@
                 if (mode === 'itinerary') {
                     tabItinerary.classList.add('active');
                     tabStation.classList.remove('active');
-                    plannerInput.placeholder = "e.g., Chandigarh to Goa";
+                    plannerInput.placeholder = "e.g., Mumbai to Goa";
                     plannerBtn.textContent = "Generate";
                     plannerExamples.style.display = 'block';
                 } else {
@@ -680,17 +745,18 @@
             });
 
             plannerBtn.addEventListener('click', async () => {
-                const query = plannerInput.value;
+                const query = plannerInput.value.toLowerCase();
                 if (!query) {
                     aiOutputDiv.innerHTML = '<p class="text-center text-red-500">Please enter a destination or place.</p>';
                     return;
                 }
-                aiOutputDiv.innerHTML = '<div class="flex justify-center items-center p-8"><div class="loader"></div></div>';
+                aiOutputDiv.innerHTML = '<div class="flex justify-center items-center p-8 dark"><div class="loader"></div></div>';
                 
                 try {
                     const resultText = await callGeminiAPI(query, currentPlannerMode);
                     aiOutputDiv.innerHTML = resultText;
                 } catch (error) {
+                    console.error("API Call failed:", error);
                     aiOutputDiv.innerHTML = '<p class="text-center text-red-500">Sorry, something went wrong.</p>';
                 }
             });
@@ -706,53 +772,134 @@
                 if (mode === 'station') {
                      let stationName = "Not Found";
                      let stationCode = "N/A";
-                     if (query.toLowerCase().includes("taj mahal")) { stationName = "Agra Cantt."; stationCode = "AGC"; }
-                     if (query.toLowerCase().includes("golden temple")) { stationName = "Amritsar Junction"; stationCode = "ASR"; }
-                     if (query.toLowerCase().includes("banke bihari")) { stationName = "Mathura Junction"; stationCode = "MTJ"; }
-
+                     // Add your station finding logic here
                      return `
-                        <div class="station-result-card">
-                            <p>Nearest station to <strong>${query}</strong> is:</p>
-                            <h2>${stationName} (${stationCode})</h2>
-                        </div>
+                          <div class="station-result-card">
+                               <p>Nearest station to <strong>${query}</strong> is:</p>
+                               <h2>${stationName} (${stationCode})</h2>
+                          </div>
                      `;
                 }
 
                 let responseHTML = '<div class="gemini-response-elegant">';
-                if (query.toLowerCase().includes("kolkata")) {
+
+                // Itinerary for Mumbai to Goa
+                if (query.includes("mumbai") && query.includes("goa")) {
                     responseHTML += `
                         <div class="itinerary-item">
                             <div class="itinerary-icon">${transportIcon}</div>
                             <div class="itinerary-content">
-                                <p class="day-title">Getting There</p>
-                                <p class="details"><b>Train (Recommended):</b> Rajdhani Express (12302) from New Delhi (NDLS) to Howrah (HWH). <span>(Approx. 17 hours)</span></p>
-                                <p class="details"><b>Flight:</b> Multiple daily flights from Delhi (DEL) to Kolkata (CCU). <span>(Approx. 2 hours)</span></p>
+                                <p class="day-title">Getting to Goa</p>
+                                <p class="details"><b>Train (Day):</b> Tejas Express (22119) from CSMT to Madgaon (MAO). <span>(Approx. 8.5 hours)</span></p>
+                                <p class="details"><b>Train (Overnight):</b> Konkan Kanya Express (10111) from CSMT to Madgaon (MAO). <span>(Approx. 12 hours)</span></p>
                             </div>
                         </div>
                         <div class="itinerary-item">
                             <div class="itinerary-icon">${accommodationIcon}</div>
                             <div class="itinerary-content">
                                 <p class="day-title">Where to Stay</p>
-                                <p class="details"><b>Central:</b> Stay near Park Street for easy access to pandals and restaurants.</p>
-                                <p class="details"><b>South Kolkata:</b> Find hotels in Gariahat or Ballygunge for a more traditional Puja experience.</p>
+                                <p class="details"><b>North Goa:</b> Stay near Baga or Calangute for vibrant nightlife and busy beaches.</p>
+                                <p class="details"><b>South Goa:</b> Choose Palolem or Colva for a quieter, more relaxed atmosphere.</p>
                             </div>
                         </div>
-                         <div class="itinerary-item">
+                        <div class="itinerary-item">
                             <div class="itinerary-icon">${sightseeingIcon}</div>
                             <div class="itinerary-content">
-                                <p class="day-title">Day 1 (Saptami)</p>
-                                <p class="details">Arrive in Kolkata and begin pandal hopping in South Kolkata's famous locations.</p>
-                                <div class="tags"><span class="tag">Sightseeing</span><span class="tag">Food</span></div>
+                                <p class="day-title">Day 1: North Goa Adventures</p>
+                                <p class="details">Arrive at Madgaon/Thivim, check into your hotel. Visit Baga and Calangute beaches. Enjoy the sunset at Anjuna beach.</p>
+                                <div class="tags"><span class="tag">Beaches</span><span class="tag">Relax</span></div>
                             </div>
                         </div>
-                         <div class="itinerary-item">
+                        <div class="itinerary-item">
                             <div class="itinerary-icon">${foodIcon}</div>
                             <div class="itinerary-content">
-                                <p class="day-title">Day 2 (Ashtami)</p>
-                                <p class="details">Visit iconic pandals in North Kolkata (e.g., Bagbazar). Experience the evening Aarti and enjoy street food.</p>
-                                <div class="tags"><span class="tag">Culture</span><span class="tag">Food</span></div>
+                                <p class="day-title">Day 2: Culture & Cuisine</p>
+                                <p class="details">Explore Old Goa's historic churches (UNESCO site). Visit a spice plantation. Enjoy a traditional Goan seafood curry for dinner.</p>
+                                <div class="tags"><span class="tag">History</span><span class="tag">Food</span><span class="tag">Culture</span></div>
                             </div>
                         </div>
+                        <div class="itinerary-item">
+                            <div class="itinerary-icon">${transportIcon}</div>
+                            <div class="itinerary-content">
+                                <p class="day-title">Day 3: South Goa Serenity & Departure</p>
+                                <p class="details">Visit the serene Palolem beach. Relax before heading back to Madgaon station for your return train.</p>
+                                <div class="tags"><span class="tag">Beaches</span><span class="tag">Departure</span></div>
+                            </div>
+                        </div>
+                    `;
+                } 
+                // Itinerary for Chandigarh to Saharanpur
+                else if (query.includes("chandigarh") && query.includes("saharanpur")) {
+                    responseHTML += `
+                        <div class="itinerary-item">
+                            <div class="itinerary-icon">${transportIcon}</div>
+                            <div class="itinerary-content">
+                                <p class="day-title">Getting to Saharanpur</p>
+                                <p class="details"><b>Train (Morning):</b> Kalka Mail (12312) from Chandigarh (CDG) to Saharanpur (SRE). <span>(Approx. 2 hours)</span></p>
+                                <p class="details"><b>Train (Afternoon):</b> Amritsar-Dehradun Express (14632) is also a good option for a day trip.</p>
+                            </div>
+                        </div>
+                        <div class="itinerary-item">
+                            <div class="itinerary-icon">${sightseeingIcon}</div>
+                            <div class="itinerary-content">
+                                <p class="day-title">Morning: Spiritual Visit</p>
+                                <p class="details">Arrive at Saharanpur. Take a local auto/taxi to the revered Shakumbhari Devi Temple, a significant Shakti Peeth (approx. 40km away).</p>
+                                <div class="tags"><span class="tag">Temple</span><span class="tag">Spiritual</span></div>
+                            </div>
+                        </div>
+                        <div class="itinerary-item">
+                            <div class="itinerary-icon">${foodIcon}</div>
+                            <div class="itinerary-content">
+                                <p class="day-title">Afternoon: Local Exploration & Food</p>
+                                <p class="details">Return to the city. Explore the famous wood carving market. Enjoy local street food like chaat and jalebi near the clock tower.</p>
+                                <div class="tags"><span class="tag">Shopping</span><span class="tag">Food</span><span class="tag">Local</span></div>
+                            </div>
+                        </div>
+                        <div class="itinerary-item">
+                            <div class="itinerary-icon">${transportIcon}</div>
+                            <div class="itinerary-content">
+                                <p class="day-title">Evening: Return Journey</p>
+                                <p class="details">Head back to Saharanpur Junction (SRE) to catch an evening train back to Chandigarh.</p>
+                                <div class="tags"><span class="tag">Departure</span></div>
+                            </div>
+                        </div>
+                    `;
+                }
+                // Itinerary for Delhi to Kolkata
+                else if (query.includes("delhi") && query.includes("kolkata")) {
+                    responseHTML += `
+                         <div class="itinerary-item">
+                               <div class="itinerary-icon">${transportIcon}</div>
+                               <div class="itinerary-content">
+                                    <p class="day-title">Getting There</p>
+                                    <p class="details"><b>Train (Recommended):</b> Rajdhani Express (12302) from New Delhi (NDLS) to Howrah (HWH). <span>(Approx. 17 hours)</span></p>
+                                    <p class="details"><b>Flight:</b> Multiple daily flights from Delhi (DEL) to Kolkata (CCU). <span>(Approx. 2 hours)</span></p>
+                               </div>
+                         </div>
+                         <div class="itinerary-item">
+                               <div class="itinerary-icon">${accommodationIcon}</div>
+                               <div class="itinerary-content">
+                                    <p class="day-title">Where to Stay</p>
+                                    <p class="details"><b>Central:</b> Stay near Park Street for easy access to pandals and restaurants.</p>
+                                    <p class="details"><b>South Kolkata:</b> Find hotels in Gariahat or Ballygunge for a more traditional Puja experience.</p>
+                               </div>
+                         </div>
+                          <div class="itinerary-item">
+                               <div class="itinerary-icon">${sightseeingIcon}</div>
+                               <div class="itinerary-content">
+                                    <p class="day-title">Day 1 (Saptami)</p>
+                                    <p class="details">Arrive in Kolkata and begin pandal hopping in South Kolkata's famous locations.</p>
+                                    <div class="tags"><span class="tag">Sightseeing</span><span class="tag">Food</span></div>
+                               </div>
+                          </div>
+                          <div class="itinerary-item">
+                               <div class="itinerary-icon">${foodIcon}</div>
+                               <div class="itinerary-content">
+                                    <p class="day-title">Day 2 (Ashtami)</p>
+                                    <p class="details">Visit iconic pandals in North Kolkata (e.g., Bagbazar). Experience the evening Aarti and enjoy street food.</p>
+                                    <div class="tags"><span class="tag">Culture</span><span class="tag">Food</span></div>
+                               </div>
+                          </div>
                     `;
                 } else {
                      return `<p class="text-center text-gray-600">Please try another prompt to see a detailed itinerary!</p>`;
@@ -765,4 +912,3 @@
     </script>
 </body>
 </html>
-
