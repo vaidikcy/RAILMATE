@@ -25,20 +25,17 @@
         .section-bg-alt {
             background-color: #f7f7f7;
         }
-
         /* --- HERO BACKGROUND (UPGRADED) --- */
         .hero-bg {
             background-color: #ffffff;
             opacity: 0.08; /* Make it more subtle */
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230d3b66' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230d3b66' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2-H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             animation: background-pan 60s linear infinite;
         }
         @keyframes background-pan {
             0% { background-position: 0 0; }
             100% { background-position: 60px 60px; }
         }
-
-
         /* --- ADVANCED ANIMATIONS --- */
         .animated-element {
             opacity: 0;
@@ -66,8 +63,7 @@
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
         }
-        
-        /* --- iPhone Mockup (BOTTOM NOTIFICATION) --- */
+                /* --- iPhone Mockup (BOTTOM NOTIFICATION) --- */
         .iphone-mockup {
             width: 300px; height: 610px; background-color: #1c1c1e; border: 10px solid #1c1c1e; border-radius: 54px;
             box-shadow: 0 25px 70px -15px rgba(0,0,0,0.3), inset 0 4px 8px rgba(255,255,255,0.05); position: relative;
@@ -86,16 +82,15 @@
         }
         .iphone-time-display .time { font-size: 5rem; font-weight: 800; letter-spacing: -0.05em; line-height: 1; }
         .iphone-time-display .date { font-weight: 600; font-size: 1.1rem; opacity: 0.9; margin-top: 4px;}
-        
-        .notification-stack { padding: 10px 10px 40px 10px; }
+                .notification-stack { padding: 10px 10px 40px 10px; }
         .notification-bubble {
             background: rgba(240, 240, 240, 0.8);
             backdrop-filter: blur(25px) saturate(180%);
             -webkit-backdrop-filter: blur(25px) saturate(180%);
             border-radius: 20px;
             padding: 12px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1); 
-            transform: translateY(150%);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+             transform: translateY(150%);
             opacity: 0;
             transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
         }
@@ -106,7 +101,6 @@
         .notification-header .time-ago { margin-left: auto; font-size: 0.9rem; color: #555;}
         .notification-body .title { font-weight: 600; color: #000; }
         .notification-body .message { color: #111; }
-
         /* --- Coach Finder --- */
         .ar-view { background: url('https://images.unsplash.com/photo-1613948922832-61a09c04a60d?q=80&w=1964&auto=format&fit=crop') center center / cover; position: relative; height: 300px; border-radius: 16px; }
         .ar-glow-effect {
@@ -125,13 +119,12 @@
             filter: drop-shadow(0 0 20px var(--primary-orange));
             animation: apple-arrow-pulse 2.5s infinite cubic-bezier(0.4, 0, 0.6, 1);
         }
-        @keyframes apple-arrow-pulse { 
-            0%, 100% { transform: scale(1); opacity: 0.8; }
+        @keyframes apple-arrow-pulse {
+             0%, 100% { transform: scale(1); opacity: 0.8; }
             50% { transform: scale(1.15); opacity: 1; }
         }
-        
-        /* --- Live Train Status (UPGRADED) --- */
-        .live-status-card { background: #1C1C1E; border-radius: 20px; padding: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+                /* --- Live Train Status (UPGRADED) --- */
+        .live-status-card { background: #1C1C1E; border-radius: 20px; padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         .live-status-header { display: flex; justify-content: space-between; align-items: center; color: white; }
         .live-train-path { position: relative; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; margin-top: 10px; }
         .live-train-progress { position: absolute; height: 100%; background: linear-gradient(90deg, var(--primary-orange), #34D399); border-radius: 2px; width: 50%; animation: fill-progress 3s ease-out forwards; }
@@ -146,13 +139,11 @@
         .blinking-dot { width: 8px; height: 8px; background-color: var(--primary-orange); border-radius: 50%; animation: blink 1.5s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
         #pnr-output { min-height: 100px; }
-        
-        /* --- AI Planner Styles (ELEGANT REVAMP) --- */
+                /* --- AI Planner Styles (ELEGANT REVAMP) --- */
         #ai-planner-output { min-height: 200px; transition: all 0.5s ease; }
         .loader { width: 48px; height: 48px; border: 5px solid rgba(0,0,0,0.1); border-bottom-color: var(--primary-orange); border-radius: 50%; display: inline-block; box-sizing: border-box; animation: rotation 1s linear infinite; }
         @keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        
-        .gemini-response-elegant { padding-top: 0.5rem; }
+                .gemini-response-elegant { padding-top: 0.5rem; }
         .itinerary-item {
             display: flex;
             align-items: flex-start;
@@ -181,13 +172,11 @@
         .itinerary-content .details { font-size: 0.95rem; color: #555; }
         .itinerary-content .tags { margin-top: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
         .itinerary-content .tag { background-color: #e9ecef; color: #495057; font-size: 0.75rem; font-weight: 500; padding: 0.2rem 0.6rem; border-radius: 9999px; }
-
         .planner-tab { padding: 0.75rem 1.5rem; font-weight: 600; border-bottom: 3px solid transparent; cursor: pointer; transition: all 0.3s ease; }
         .planner-tab.active { color: var(--primary-orange); border-bottom-color: var(--primary-orange); }
         .station-result-card { text-align: center; padding: 2rem; }
         .station-result-card p { color: #666; margin-bottom: 0.5rem; }
         .station-result-card h2 { font-size: 2.25rem; font-weight: 800; color: var(--primary-blue); }
-
         /* --- User Journey --- */
         .journey-line {
             background: linear-gradient(90deg, var(--primary-blue), var(--primary-green), var(--primary-orange));
@@ -195,8 +184,6 @@
     </style>
 </head>
 <body class="overflow-x-hidden">
-
-    <!-- Header -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200/80">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-xl font-bold tracking-tight text-gray-800">
@@ -214,9 +201,7 @@
             </button>
         </div>
     </header>
-
     <main>
-        <!-- Hero Section -->
         <section class="min-h-screen flex items-center justify-center text-center pt-20 px-4 relative isolate">
              <div class="absolute inset-0 -z-10 hero-bg"></div>
             <div class="max-w-4xl mx-auto">
@@ -234,16 +219,12 @@
                 </div>
             </div>
         </section>
-
-        <!-- Features Section -->
         <section id="features" class="py-20 lg:py-32 section-bg-alt">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="animated-element text-4xl md:text-5xl font-extrabold tracking-tighter">Your Smart Travel Companion Awaits.</h2>
                 </div>
-
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Feature 1: Smart Ticketing (UPGRADED) -->
                     <div class="animated-element feature-card p-8 col-span-1 md:col-span-2 lg:col-span-3">
                         <div>
                             <span class="inline-block bg-green-100 text-green-700 text-sm font-semibold px-3 py-1 rounded-full mb-3">Booking Reimagined</span>
@@ -268,7 +249,6 @@
                                         Search Trains
                                     </button>
                                </div>
-                               <!-- Selected Option -->
                                <div class="p-4 border-b-4 border-green-500">
                                     <div class="flex justify-between items-center">
                                         <div>
@@ -284,7 +264,6 @@
                                         <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full">✓ Food Included</span>
                                     </div>
                                </div>
-                               <!-- Other Options -->
                                <div class="p-4">
                                     <h4 class="font-semibold text-gray-500 mb-2 text-sm">OTHER OPTIONS FOR TODAY</h4>
                                     <div class="flex justify-between items-center p-3 rounded-lg hover:bg-gray-50 cursor-pointer">
@@ -312,8 +291,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Feature 2: Coach Finder -->
                     <div class="animated-element feature-card p-8 col-span-1 lg:col-span-2" style="transition-delay: 0.1s;">
                         <span class="inline-block bg-purple-100 text-purple-700 text-sm font-semibold px-3 py-1 rounded-full mb-3">Effortless Navigation</span>
                         <h3 class="text-2xl font-bold mb-2">Coach Finder</h3>
@@ -336,8 +313,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Feature 3: Personalized Alerts -->
                     <div class="animated-element feature-card p-0 col-span-1 lg:col-span-1 flex flex-col items-center" style="transition-delay: 0.2s;">
                         <div class="p-8 pb-0 w-full">
                             <span class="inline-block bg-yellow-100 text-yellow-700 text-sm font-semibold px-3 py-1 rounded-full mb-3">Stay Informed</span>
@@ -369,8 +344,65 @@
                         </div>
                     </div>
 
-                    <!-- Feature 4: Live Train Status (UPGRADED) -->
-                    <div class="animated-element feature-card p-8 col-span-1 lg:col-span-3" style="transition-delay: 0.3s;">
+                    <div class="animated-element feature-card p-8 col-span-1 lg:col-span-3" style="transition-delay: 0.3s; background: none; border: none; box-shadow: none;">
+                        <div class="p-0">
+                            <span class="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-3 py-1 rounded-full mb-3">Predictive Planning</span>
+                            <h3 class="text-2xl font-bold mb-2">Smart Station ETA</h3>
+                            <p class="text-gray-500 mb-6">Get a live ETA from your home to the station, automatically factoring in live traffic, weather, and platform crowd data to ensure you're never late.</p>
+                        </div>
+                        
+                        <div class="live-status-card grid grid-cols-1 md:grid-cols-3 gap-6"> <div class="md:col-span-1 text-center md:text-left">
+                                <div class="mb-4">
+                                    <p class="text-sm text-gray-400">Your Train:</p>
+                                    <p class="text-lg font-bold text-white">12951 Mumbai Rajdhani</p>
+                                    <p class="text-sm text-gray-300">Est. Departure: <span class="font-bold text-white">2:00 PM</span></p>
+                                </div>
+
+                                <hr class="border-gray-600/50 mb-4">
+
+                                <p class="text-sm text-gray-400">Recommended: Leave by</p>
+                                <p class="text-5xl font-extrabold tracking-tighter text-white">12:45 PM</p>
+                                <p class="font-semibold text-lg text-gray-300">to arrive 30 mins early</p>
+                            </div>
+
+                            <div class="md:col-span-2">
+                                <p class="font-semibold text-gray-300 mb-3 text-sm text-center md:text-left">Live Factors Calculated:</p>
+                                <div class="flex flex-col sm:flex-row justify-around gap-4">
+                                    
+                                    <div class="flex items-center bg-black/30 p-3 rounded-xl">
+                                        <div class="text-red-500 mr-3 flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="6" x2="10" y2="18"></line><line x1="14" y1="6" x2="14" y2="18"></line><path d="M12 18h.01"></path><path d="M12 14h.01"></path><path d="M12 10h.01"></path><path d="M12 6h.01"></path></svg>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-white">Heavy Traffic</p>
+                                            <p class="text-sm text-red-400">+15 min delay</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-center bg-black/30 p-3 rounded-xl">
+                                        <div class="text-blue-500 mr-3 flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a5 5 0 0 0-3-8h-1.26A8 8 0 0 0 4 15.25"></path><path d="m9.2 22 3-7"></path><path d="m9.2 18 3-7"></path><path d="m14.8 22 3-7"></path><path d="m14.8 18 3-7"></path></svg>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-white">Light Rain</p>
+                                            <p class="text-sm text-blue-400">+5 min delay</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center bg-black/30 p-3 rounded-xl">
+                                        <div class="text-orange-500 mr-3 flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                        </div>
+                                        <div>
+                                            <p class="font-bold text-white">High Crowd</p>
+                                            <p class="text-sm text-orange-400">+8 min security</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="animated-element feature-card p-8 col-span-1 lg:col-span-3" style="transition-delay: 0.4s; background: none; border: none; box-shadow: none;">
                         <div class="flex justify-between items-center mb-4">
                             <div>
                                 <span class="inline-block bg-cyan-100 text-cyan-700 text-sm font-semibold px-3 py-1 rounded-full">Real-Time Tracking</span>
@@ -381,8 +413,6 @@
                                 <button id="status-tab-pnr" class="planner-tab text-sm">PNR Status</button>
                             </div>
                         </div>
-
-                        <!-- Live Status Content -->
                         <div id="live-status-content">
                             <div class="live-status-card">
                                  <div class="live-status-header">
@@ -414,8 +444,6 @@
                                  </div>
                             </div>
                         </div>
-
-                        <!-- PNR Status Content -->
                         <div id="pnr-status-content" class="hidden">
                             <div class="bg-gray-50 p-6 rounded-2xl">
                                 <div class="relative mb-4">
@@ -431,22 +459,17 @@
                 </div>
             </div>
         </section>
-        
-        <!-- AI Trip Planner Section -->
-        <section id="ai-planner" class="py-20 lg:py-24 bg-white">
+                <section id="ai-planner" class="py-20 lg:py-24 bg-white">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-12">
                     <h2 class="animated-element text-4xl md:text-5xl font-extrabold tracking-tighter">Plan Your Perfect Getaway</h2>
                     <p class="animated-element text-lg text-gray-500 mt-4" style="transition-delay: 0.1s;">Dreaming of a trip but dread the planning? Describe your ideal getaway—from a spiritual journey to Vrindavan to a vibrant week in Goa—and let our AI craft a complete, rail-centric travel plan just for you.</p>
                 </div>
                 <div class="animated-element max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-2xl border" style="transition-delay: 0.2s;">
-                    <!-- Planner Tabs -->
                     <div class="flex justify-center border-b mb-6">
                         <button id="tab-itinerary" class="planner-tab active">Trip Itinerary</button>
                         <button id="tab-station" class="planner-tab">Nearest Station</button>
                     </div>
-
-                    <!-- Input Area -->
                     <div class="relative mb-4">
                         <input id="planner-input" type="text" placeholder="e.g., Chandigarh to Goa" class="w-full pl-5 pr-32 py-4 rounded-full border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition text-lg">
                         <button id="planner-btn" class="absolute right-2 top-1/2 -translate-y-1/2 bg-gray-900 text-white font-semibold px-6 py-2.5 rounded-full hover:bg-black transition-transform hover:scale-105">Generate</button>
@@ -454,16 +477,12 @@
                      <div id="planner-examples" class="text-center text-sm text-gray-400">
                         Try: <button class="hover:text-orange-500">Mumbai to Kerala</button> &middot; <button class="hover:text-orange-500">Delhi to Kolkata</button>
                     </div>
-                    
-                    <!-- Output -->
-                    <div id="ai-planner-output" class="bg-gray-50 p-6 rounded-lg text-left mt-6">
+                                    <div id="ai-planner-output" class="bg-gray-50 p-6 rounded-lg text-left mt-6">
                         <p class="text-center text-gray-500">Your personalized travel plan will appear here...</p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- User Journey Section -->
         <section id="journey" class="py-20 lg:py-32 section-bg-alt">
            <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-16">
@@ -473,7 +492,6 @@
                 <div class="relative">
                     <div class="hidden lg:block absolute top-8 left-0 w-full h-1 journey-line" style="transform: translateY(-50%); z-index: 0;"></div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 relative">
-                        <!-- Step 1 -->
                         <div class="animated-element text-center z-10" style="transition-delay: 0s;">
                            <div class="flex items-center justify-center bg-blue-100 text-blue-600 w-16 h-16 rounded-full mx-auto mb-4 border-4 border-gray-100 shadow-md">
                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
@@ -481,7 +499,6 @@
                            <h3 class="font-bold mb-1">Book Ticket</h3>
                            <p class="text-sm text-gray-500">User books a ticket via the Smart Calendar.</p>
                         </div>
-                        <!-- Step 2 -->
                         <div class="animated-element text-center z-10" style="transition-delay: 0.1s;">
                            <div class="flex items-center justify-center bg-green-100 text-green-600 w-16 h-16 rounded-full mx-auto mb-4 border-4 border-gray-100 shadow-md">
                               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.33-10.5c.2-.05.39-.1.59-.15C17.7 8.05 19 7.15 19 6a3 3 0 0 0-3-3c-1.12 0-2.25.4-3.17 1.25M12 12v9"></path><path d="M21 12h-2.5a1.5 1.5 0 0 0-1.5 1.5v0a1.5 1.5 0 0 0 1.5 1.5H21"></path></svg>
@@ -489,7 +506,6 @@
                            <h3 class="font-bold mb-1">Plan Trip with AI</h3>
                            <p class="text-sm text-gray-500">Generates a custom itinerary for the destination.</p>
                         </div>
-                        <!-- Step 3 -->
                         <div class="animated-element text-center z-10" style="transition-delay: 0.2s;">
                            <div class="flex items-center justify-center bg-yellow-100 text-yellow-600 w-16 h-16 rounded-full mx-auto mb-4 border-4 border-gray-100 shadow-md">
                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
@@ -497,7 +513,6 @@
                            <h3 class="font-bold mb-1">Get Notifications</h3>
                            <p class="text-sm text-gray-500">Gets AI-simplified alerts on platform changes.</p>
                         </div>
-                        <!-- Step 4 -->
                         <div class="animated-element text-center z-10" style="transition-delay: 0.3s;">
                            <div class="flex items-center justify-center bg-purple-100 text-purple-600 w-16 h-16 rounded-full mx-auto mb-4 border-4 border-gray-100 shadow-md">
                               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
@@ -505,7 +520,6 @@
                            <h3 class="font-bold mb-1">Get AR Coach Guide</h3>
                            <p class="text-sm text-gray-500">Receives AR directions to their coach on arrival.</p>
                         </div>
-                        <!-- Step 5 -->
                         <div class="animated-element text-center z-10" style="transition-delay: 0.4s;">
                            <div class="flex items-center justify-center bg-red-100 text-red-600 w-16 h-16 rounded-full mx-auto mb-4 border-4 border-gray-100 shadow-md">
                               <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
@@ -517,9 +531,7 @@
                 </div>
            </div>
         </section>
-        
-        <!-- Roadmap Section -->
-        <section id="roadmap" class="py-20 lg:py-24 bg-white">
+                <section id="roadmap" class="py-20 lg:py-24 bg-white">
              <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
                     <h2 class="animated-element text-4xl md:text-5xl font-extrabold tracking-tighter" style="color: var(--primary-blue);">Our Vision for Indian Railways</h2>
@@ -527,10 +539,8 @@
                 </div>
              </div>
         </section>
-
     </main>
-    
-    <footer style="background-color: var(--dark-bg);" class="text-white py-12">
+        <footer style="background-color: var(--dark-bg);" class="text-white py-12">
         <div class="container mx-auto px-6 text-center">
             <h3 class="text-2xl font-bold mb-2">Ready for a better travel experience?</h3>
             <p class="text-gray-400 mb-6">RailMate is coming soon. Stay in the loop.</p>
@@ -538,8 +548,6 @@
             <p class="text-xs text-gray-500 mt-10">&copy; 2025 RailMate. All Rights Reserved.</p>
         </div>
     </footer>
-
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // --- General Animation Observer ---
@@ -554,8 +562,7 @@
                 });
             }, { threshold: 0.1 });
             animatedElements.forEach(el => observer.observe(el));
-            
-            // --- Specific Observers for persistent animations ---
+                        // --- Specific Observers for persistent animations ---
             const persistentAnimatedElements = document.querySelectorAll('.ar-view, .iphone-mockup');
             const persistentObserver = new IntersectionObserver((entries) => {
                  entries.forEach(entry => {
@@ -583,7 +590,6 @@
                 });
             }, { threshold: 0.6 });
             persistentAnimatedElements.forEach(el => persistentObserver.observe(el));
-
             // --- LIVE STATUS / PNR TABS LOGIC ---
             const statusTabLive = document.getElementById('status-tab-live');
             const statusTabPnr = document.getElementById('status-tab-pnr');
@@ -592,33 +598,28 @@
             const pnrBtn = document.getElementById('pnr-btn');
             const pnrInput = document.getElementById('pnr-input');
             const pnrOutput = document.getElementById('pnr-output');
-
             statusTabLive.addEventListener('click', () => {
                 statusTabLive.classList.add('active', 'bg-white', 'shadow');
                 statusTabPnr.classList.remove('active', 'bg-white', 'shadow');
                 liveStatusContent.classList.remove('hidden');
                 pnrStatusContent.classList.add('hidden');
             });
-
             statusTabPnr.addEventListener('click', () => {
                 statusTabPnr.classList.add('active', 'bg-white', 'shadow');
                 statusTabLive.classList.remove('active', 'bg-white', 'shadow');
                 pnrStatusContent.classList.remove('hidden');
                 liveStatusContent.classList.add('hidden');
             });
-            
-            pnrBtn.addEventListener('click', async () => {
+                        pnrBtn.addEventListener('click', async () => {
                 const pnr = pnrInput.value;
                 if (!pnr || pnr.length !== 10 || !/^\d+$/.test(pnr)) {
                     pnrOutput.innerHTML = '<p class="text-center text-red-500">Please enter a valid 10-digit PNR.</p>';
                     return;
                 }
                 pnrOutput.innerHTML = '<div class="flex justify-center items-center p-8"><div class="loader"></div></div>';
-                
-                // Simulate API call
+                                // Simulate API call
                 await new Promise(resolve => setTimeout(resolve, 1500));
-                
-                let resultHTML = '';
+                                let resultHTML = '';
                 // Simple logic for mock data
                 if (pnr.startsWith('24')) { // Confirmed
                     resultHTML = `<div class="text-center">
@@ -638,7 +639,6 @@
                 }
                 pnrOutput.innerHTML = resultHTML;
             });
-
             // --- AI PLANNER LOGIC ---
             const plannerBtn = document.getElementById('planner-btn');
             const plannerInput = document.getElementById('planner-input');
@@ -647,9 +647,7 @@
             const tabItinerary = document.getElementById('tab-itinerary');
             const tabStation = document.getElementById('tab-station');
             const plannerExamples = document.getElementById('planner-examples');
-            
-            let currentPlannerMode = 'itinerary';
-
+                        let currentPlannerMode = 'itinerary';
             function setPlannerMode(mode) {
                 currentPlannerMode = mode;
                 if (mode === 'itinerary') {
@@ -668,17 +666,14 @@
                 plannerInput.value = "";
                 aiOutputDiv.innerHTML = '<p class="text-center text-gray-500">Your results will appear here...</p>';
             }
-
             tabItinerary.addEventListener('click', () => setPlannerMode('itinerary'));
             tabStation.addEventListener('click', () => setPlannerMode('station'));
-
             exampleButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     plannerInput.value = button.textContent;
                     plannerBtn.click();
                 });
             });
-
             plannerBtn.addEventListener('click', async () => {
                 const query = plannerInput.value;
                 if (!query) {
@@ -686,119 +681,1582 @@
                     return;
                 }
                 aiOutputDiv.innerHTML = '<div class="flex justify-center items-center p-8"><div class="loader"></div></div>';
-                
-                try {
+                                try {
                     const resultText = await callGeminiAPI(query, currentPlannerMode);
                     aiOutputDiv.innerHTML = resultText;
                 } catch (error) {
                     aiOutputDiv.innerHTML = '<p class="text-center text-red-500">Sorry, something went wrong.</p>';
                 }
             });
-
             async function callGeminiAPI(query, mode) {
                 await new Promise(resolve => setTimeout(resolve, 1500));
-                
-                const transportIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 17.063V5a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v12.063A4.002 4.002 0 0 0 8 22a4 4 0 0 0 8 0 4.002 4.002 0 0 0 4-4.937zM7 4h10a1 1 0 0 1 1 1v2H6V5a1 1 0 0 1 1-1zm5 16a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>`;
+                                const transportIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 17.063V5a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v12.063A4.002 4.002 0 0 0 8 22a4 4 0 0 0 8 0 4.002 4.002 0 0 0 4-4.937zM7 4h10a1 1 0 0 1 1 1v2H6V5a1 1 0 0 1 1-1zm5 16a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>`;
                 const accommodationIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 21H5a3 3 0 0 1-3-3V9a1 1 0 0 1 1-1h18a1 1 0 0 1 1 1v9a3 3 0 0 1-3 3zM4 9v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9H4zm16-4a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v1z"/></svg>`;
                 const foodIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16 2H8C4.691 2 2 4.691 2 8v13a1 1 0 0 0 1 1h13c3.309 0 6-2.691 6-6V8c0-3.309-2.691-6-6-6zm4 13c0 2.206-1.794 4-4 4H4V8c0-2.206 1.794-4 4-4h8c2.206 0 4 1.794 4 4v7z"/><path d="M15.292 11.294 13 9v5h2v-3.585l2.708 2.707 1.414-1.414zM8 9h3v2H8z"/></svg>`;
                 const sightseeingIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5C5.925 5 1 12 1 12s4.925 7 11 7 11-7 11-7-4.925-7-11-7zm0 12c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5zm0-8c-1.654 0-3 1.346-3 3s1.346 3 3 3 3-1.346 3-3-1.346-3-3-3z"/></svg>`;
-                
-                if (mode === 'station') {
-                     let stationName = "Not Found";
-                     let stationCode = "N/A";
-                     // ---------------- Famous Monuments ----------------
-if (query.toLowerCase().includes("taj mahal")) { stationName = "Agra Cantt."; stationCode = "AGC"; }
-if (query.toLowerCase().includes("agra fort")) { stationName = "Agra Cantt."; stationCode = "AGC"; }
-if (query.toLowerCase().includes("red fort")) { stationName = "Old Delhi Junction"; stationCode = "DLI"; }
-if (query.toLowerCase().includes("qutub minar")) { stationName = "New Delhi"; stationCode = "NDLS"; }
-if (query.toLowerCase().includes("india gate")) { stationName = "New Delhi"; stationCode = "NDLS"; }
-if (query.toLowerCase().includes("lotus temple")) { stationName = "New Delhi"; stationCode = "NDLS"; }
-if (query.toLowerCase().includes("gateway of india")) { stationName = "Mumbai CST"; stationCode = "CSMT"; }
-if (query.toLowerCase().includes("victoria memorial")) { stationName = "Howrah Junction"; stationCode = "HWH"; }
-if (query.toLowerCase().includes("charminar")) { stationName = "Hyderabad Deccan"; stationCode = "HYB"; }
-if (query.toLowerCase().includes("golconda fort")) { stationName = "Hyderabad Deccan"; stationCode = "HYB"; }
-if (query.toLowerCase().includes("hawa mahal")) { stationName = "Jaipur Junction"; stationCode = "JP"; }
-if (query.toLowerCase().includes("amer fort")) { stationName = "Jaipur Junction"; stationCode = "JP"; }
-if (query.toLowerCase().includes("jantar mantar")) { stationName = "Jaipur Junction"; stationCode = "JP"; }
-if (query.toLowerCase().includes("umaid bhawan palace")) { stationName = "Jodhpur Junction"; stationCode = "JU"; }
-if (query.toLowerCase().includes("golden temple")) { stationName = "Amritsar Junction"; stationCode = "ASR"; }
+                             if (mode === 'station') {
+    let stationName = "Not Found";
+    let stationCode = "N/A";
+    const q = query.toLowerCase().trim();
 
-// ---------------- Temples & Jyotirlingas ----------------
-if (query.toLowerCase().includes("banke bihari")) { stationName = "Mathura Junction"; stationCode = "MTJ"; }
-if (query.toLowerCase().includes("kedarnath")) { stationName = "Rishikesh"; stationCode = "RKSH"; }
-if (query.toLowerCase().includes("badrinath")) { stationName = "Rishikesh"; stationCode = "RKSH"; }
-if (query.toLowerCase().includes("haridwar")) { stationName = "Haridwar"; stationCode = "HW"; }
-if (query.toLowerCase().includes("vaishno devi")) { stationName = "Katra"; stationCode = "SVDK"; }
-if (query.toLowerCase().includes("amarnath")) { stationName = "Jammu Tawi"; stationCode = "JAT"; }
-if (query.toLowerCase().includes("tirupati")) { stationName = "Tirupati"; stationCode = "TPTY"; }
-if (query.toLowerCase().includes("somnath")) { stationName = "Somnath"; stationCode = "SMNH"; }
-if (query.toLowerCase().includes("dwarka")) { stationName = "Dwarka"; stationCode = "DWK"; }
-if (query.toLowerCase().includes("shirdi")) { stationName = "Sainagar Shirdi"; stationCode = "SNSI"; }
-if (query.toLowerCase().includes("kashi vishwanath")) { stationName = "Varanasi Junction"; stationCode = "BSB"; }
-if (query.toLowerCase().includes("mahakaleshwar")) { stationName = "Ujjain Junction"; stationCode = "UJN"; }
-if (query.toLowerCase().includes("omkareshwar")) { stationName = "Omkareshwar Road"; stationCode = "OM"; }
-if (query.toLowerCase().includes("trimbakeshwar")) { stationName = "Nasik Road"; stationCode = "NK"; }
-if (query.toLowerCase().includes("bhimashankar")) { stationName = "Pune Junction"; stationCode = "PUNE"; }
-if (query.toLowerCase().includes("kedarnath")) { stationName = "Rishikesh"; stationCode = "RKSH"; }
-if (query.toLowerCase().includes("mallikarjuna")) { stationName = "Markapur Road"; stationCode = "MRK"; }
-if (query.toLowerCase().includes("nageshwar jyotirlinga")) { stationName = "Dwarka"; stationCode = "DWK"; }
-if (query.toLowerCase().includes("ramnathswamy")) { stationName = "Rameswaram"; stationCode = "RMM"; }
-if (query.toLowerCase().includes("grishneshwar")) { stationName = "Aurangabad"; stationCode = "AWB"; }
-if (query.toLowerCase().includes("lingaraj temple")) { stationName = "Bhubaneswar"; stationCode = "BBS"; }
-if (query.toLowerCase().includes("jagannath puri")) { stationName = "Puri"; stationCode = "PURI"; }
-if (query.toLowerCase().includes("konark sun temple")) { stationName = "Puri"; stationCode = "PURI"; }
-if (query.toLowerCase().includes("meenakshi temple")) { stationName = "Madurai Junction"; stationCode = "MDU"; }
-if (query.toLowerCase().includes("akshardham")) { stationName = "Gandhinagar Capital"; stationCode = "GNC"; }
+    // --- LARGE stationMappings array: add / edit entries here ---
+    const stationMappings = [
+      // Agra / Taj Mahal area
+      { keys: ["taj mahal","tajmahal","taj mahal agra","the taj","taaj"], name: "Agra Cantt.", code: "AGC" },
+      { keys: ["agra fort","agra fort agra"], name: "Agra Cantt.", code: "AGC" },
 
-// ---------------- Hill Stations ----------------
-if (query.toLowerCase().includes("manali")) { stationName = "Joginder Nagar"; stationCode = "JDNX"; }
-if (query.toLowerCase().includes("shimla")) { stationName = "Shimla"; stationCode = "SML"; }
-if (query.toLowerCase().includes("dalhousie")) { stationName = "Pathankot"; stationCode = "PTK"; }
-if (query.toLowerCase().includes("mussoorie")) { stationName = "Dehradun"; stationCode = "DDN"; }
-if (query.toLowerCase().includes("nainital")) { stationName = "Kathgodam"; stationCode = "KGM"; }
-if (query.toLowerCase().includes("darjeeling")) { stationName = "New Jalpaiguri"; stationCode = "NJP"; }
-if (query.toLowerCase().includes("gangtok")) { stationName = "New Jalpaiguri"; stationCode = "NJP"; }
-if (query.toLowerCase().includes("ooty")) { stationName = "Mettupalayam"; stationCode = "MTP"; }
-if (query.toLowerCase().includes("kodaikanal")) { stationName = "Kodai Road"; stationCode = "KQN"; }
-if (query.toLowerCase().includes("coorg")) { stationName = "Mysore Junction"; stationCode = "MYS"; }
-if (query.toLowerCase().includes("mount abu")) { stationName = "Abu Road"; stationCode = "ABR"; }
-if (query.toLowerCase().includes("lavasa")) { stationName = "Pune Junction"; stationCode = "PUNE"; }
-if (query.toLowerCase().includes("pachmarhi")) { stationName = "Pipariya"; stationCode = "PPI"; }
-if (query.toLowerCase().includes("araku valley")) { stationName = "Araku"; stationCode = "ARK"; }
+      // Delhi & nearby monuments
+      { keys: ["red fort","redfort"], name: "Old Delhi Junction", code: "DLI" },
+      { keys: ["qutub minar","qutub"], name: "New Delhi", code: "NDLS" },
+      { keys: ["india gate"], name: "New Delhi", code: "NDLS" },
+      { keys: ["lotus temple"], name: "New Delhi", code: "NDLS" },
+      { keys: ["humayun's tomb","humayuns tomb","humayun tomb"], name: "Hazrat Nizamuddin", code: "NZM" },
+      { keys: ["lodhi garden"], name: "New Delhi", code: "NDLS" },
+      { keys: ["akshardham delhi","akshardham"], name: "Anand Vihar Terminal", code: "ANVT" },
 
-// ---------------- Beaches ----------------
-if (query.toLowerCase().includes("baga beach")) { stationName = "Thivim"; stationCode = "THVM"; }
-if (query.toLowerCase().includes("calangute beach")) { stationName = "Thivim"; stationCode = "THVM"; }
-if (query.toLowerCase().includes("anjuna beach")) { stationName = "Thivim"; stationCode = "THVM"; }
-if (query.toLowerCase().includes("palolem beach")) { stationName = "Canacona"; stationCode = "CNO"; }
-if (query.toLowerCase().includes("varkala beach")) { stationName = "Varkala"; stationCode = "VAK"; }
-if (query.toLowerCase().includes("marina beach")) { stationName = "Chennai Central"; stationCode = "MAS"; }
-if (query.toLowerCase().includes("kovalam beach")) { stationName = "Thiruvananthapuram"; stationCode = "TVC"; }
-if (query.toLowerCase().includes("digha beach")) { stationName = "Digha"; stationCode = "DGHA"; }
-if (query.toLowerCase().includes("puri beach")) { stationName = "Puri"; stationCode = "PURI"; }
+      // Mumbai
+      { keys: ["gateway of india","gateway of india mumbai"], name: "Mumbai CST", code: "CSMT" },
+      { keys: ["marine drive"], name: "Mumbai Central", code: "BCT" },
+      { keys: ["elephanta caves","elephanta"], name: "CST / Mumbai CST", code: "CSMT" },
 
-// ---------------- National Parks & Nature ----------------
-if (query.toLowerCase().includes("gir national park")) { stationName = "Junagadh Junction"; stationCode = "JND"; }
-if (query.toLowerCase().includes("kaziranga")) { stationName = "Furkating Junction"; stationCode = "FKG"; }
-if (query.toLowerCase().includes("sundarbans")) { stationName = "Canning"; stationCode = "CG"; }
-if (query.toLowerCase().includes("ranthambore")) { stationName = "Sawai Madhopur"; stationCode = "SWM"; }
-if (query.toLowerCase().includes("jim corbett")) { stationName = "Ramnagar"; stationCode = "RMR"; }
-if (query.toLowerCase().includes("bandhavgarh")) { stationName = "Umaria"; stationCode = "UMR"; }
-if (query.toLowerCase().includes("kanha")) { stationName = "Jabalpur"; stationCode = "JBP"; }
-if (query.toLowerCase().includes("periyar")) { stationName = "Kottayam"; stationCode = "KTYM"; }
-if (query.toLowerCase().includes("bharatpur bird sanctuary")) { stationName = "Bharatpur Junction"; stationCode = "BTE"; }
-if (query.toLowerCase().includes("hemis national park")) { stationName = "Leh"; stationCode = "LEH"; }
-if (query.toLowerCase().includes("valley of flowers")) { stationName = "Rishikesh"; stationCode = "RKSH"; }
-if (query.toLowerCase().includes("majuli")) { stationName = "Jorhat Town"; stationCode = "JTTN"; }
+      // Kolkata / Howrah
+      { keys: ["victoria memorial","victoria memorial kolkata"], name: "Howrah Junction", code: "HWH" },
+      { keys: ["howrah bridge","howrah bridge kolkata"], name: "Howrah Junction", code: "HWH" },
+      { keys: ["dakshineswar"], name: "Howrah Junction", code: "HWH" },
+      { keys: ["park street","bagbazar"], name: "Howrah Junction", code: "HWH" },
 
+      // Hyderabad
+      { keys: ["charminar","char minar"], name: "Hyderabad Deccan", code: "HYB" },
+      { keys: ["golconda fort","golconda"], name: "Hyderabad Deccan", code: "HYB" },
 
-                     return `
-                        <div class="station-result-card">
-                            <p>Nearest station to <strong>${query}</strong> is:</p>
-                            <h2>${stationName} (${stationCode})</h2>
-                        </div>
-                     `;
-                }
+      // Jaipur / Rajasthan
+      { keys: ["hawa mahal","hawa mahal jaipur","wind palace"], name: "Jaipur Junction", code: "JP" },
+      { keys: ["amer fort","amber fort","amer palace"], name: "Jaipur Junction", code: "JP" },
+      { keys: ["jantar mantar jaipur","jantar mantar"], name: "Jaipur Junction", code: "JP" },
+      { keys: ["udaipur","city palace udaipur","lake pichola"], name: "Udaipur City", code: "UDZ" },
+      { keys: ["jodhpur","umaid bhawan","umaid bhawan palace"], name: "Jodhpur Junction", code: "JU" },
+      { keys: ["pushkar"], name: "Ajmer Junction", code: "AII" },
+      { keys: ["mount abu"], name: "Abu Road", code: "ABR" },
+      { keys: ["ranakpur"], name: "Falna", code: "FA" },
+
+      // Varanasi / Religious
+      { keys: ["kashi vishwanath","kashi","banaras","varanasi"], name: "Varanasi Junction", code: "BSB" },
+      { keys: ["sarnath"], name: "Varanasi Junction", code: "BSB" },
+
+      // Amritsar / Punjab
+      { keys: ["golden temple","harmandir sahib"], name: "Amritsar Junction", code: "ASR" },
+      { keys: ["wagah border","wagah"], name: "Amritsar Junction", code: "ASR" },
+
+      // Temple circuit & pilgrim towns
+      { keys: ["banke bihari","banke bihari temple"], name: "Mathura Junction", code: "MTJ" },
+      { keys: ["kedarnath"], name: "Rishikesh", code: "RKSH" },
+      { keys: ["badrinath"], name: "Rishikesh", code: "RKSH" },
+      { keys: ["haridwar"], name: "Haridwar", code: "HW" },
+      { keys: ["vaishno devi","vaishno devi shrine","mata vaishno devi"], name: "Katra", code: "SVDK" },
+      { keys: ["amarnath"], name: "Jammu Tawi", code: "JAT" },
+      { keys: ["tirupati","tirumala"], name: "Tirupati", code: "TPTY" },
+      { keys: ["somnath"], name: "Somnath", code: "SMNH" },
+      { keys: ["ramnathswamy","rameswaram","ramanathaswamy"], name: "Rameswaram", code: "RMM" },
+      { keys: ["grishneshwar","grishneshwar temple"], name: "Aurangabad", code: "AWB" },
+      { keys: ["lingaraj temple"], name: "Bhubaneswar", code: "BBS" },
+      { keys: ["jagannath puri","jagannath temple"], name: "Puri", code: "PURI" },
+      { keys: ["konark sun temple","konark"], name: "Puri", code: "PURI" },
+
+      // Hill stations
+      { keys: ["manali"], name: "Joginder Nagar", code: "JDNX" },
+      { keys: ["shimla"], name: "Shimla", code: "SML" },
+      { keys: ["dalhousie"], name: "Pathankot", code: "PTK" },
+      { keys: ["mussoorie"], name: "Dehradun", code: "DDN" },
+      { keys: ["nainital"], name: "Kathgodam", code: "KGM" },
+      { keys: ["darjeeling"], name: "New Jalpaiguri", code: "NJP" },
+      { keys: ["gangtok"], name: "New Jalpaiguri", code: "NJP" },
+      { keys: ["ooty","ooty nilgiri"], name: "Mettupalayam", code: "MTP" },
+      { keys: ["kodaikanal"], name: "Kodai Road", code: "KQN" },
+      { keys: ["coorg","madikeri"], name: "Mysore Junction", code: "MYS" },
+      { keys: ["kasol"], name: "Joginder Nagar", code: "JDNX" },
+      { keys: ["kheerganga"], name: "Joginder Nagar", code: "JDNX" },
+      { keys: ["auli"], name: "Rishikesh", code: "RKSH" },
+
+      // Beaches & Goa
+      { keys: ["baga beach","calangute","anjuna","candolim"], name: "Thivim", code: "THVM" },
+      { keys: ["palolem","palolem beach"], name: "Canacona", code: "CNO" },
+      { keys: ["varkala","varkala beach"], name: "Varkala", code: "VAK" },
+      { keys: ["marina beach","marina"], name: "Chennai Central", code: "MAS" },
+      { keys: ["kovalam","kovalam beach"], name: "Thiruvananthapuram", code: "TVC" },
+      { keys: ["digha beach"], name: "Digha", code: "DGHA" },
+      { keys: ["palolem"], name: "Canacona", code: "CNO" },
+
+      // South India – temples & landmarks
+      { keys: ["brihadeeswara temple","thanjavur temple","big temple"], name: "Thanjavur", code: "TJ" },
+      { keys: ["meenakshi amman","meenakshi temple","madurai temple"], name: "Madurai Junction", code: "MDU" },
+      { keys: ["valluvar kottam"], name: "Chennai Central", code: "MAS" },
+      { keys: ["kapaleeshwarar temple","kapaleeswarar"], name: "Chennai Egmore", code: "MS" },
+      { keys: ["rameshwaram bridge","pamban bridge"], name: "Rameswaram", code: "RMM" },
+
+      // Bengaluru / Karnataka
+      { keys: ["lalbagh","lal bagh"], name: "Bangalore City", code: "SBC" },
+      { keys: ["vidhana soudha","vidhan soudha"], name: "Bangalore Cantt.", code: "BNC" },
+      { keys: ["bannerghatta"], name: "Bangalore City", code: "SBC" },
+      { keys: ["iskcon bangalore","iskcon"], name: "Yeshwanthpur Junction", code: "YPR" },
+      { keys: ["hampi","hampi ruins"], name: "Hospet Junction", code: "HPT" },
+      { keys: ["hassan","shravanabelagola"], name: "Hassan", code: "HAS" },
+
+      // Kerala
+      { keys: ["munnar"], name: "Aluva", code: "AWY" },
+      { keys: ["alleppey","alappuzha"], name: "Alappuzha", code: "ALLP" },
+      { keys: ["wayanad"], name: "Kozhikode", code: "CLT" },
+      { keys: ["bekal fort","bekal"], name: "Kasargod", code: "KGQ" },
+
+      // North India – more
+      { keys: ["jhansi fort","jhansi"], name: "Jhansi Junction", code: "JHS" },
+      { keys: ["gwalior fort","gwalior"], name: "Gwalior", code: "GWL" },
+      { keys: ["ranikhet"], name: "Kathgodam", code: "KGM" },
+      { keys: ["almora"], name: "Kathgodam", code: "KGM" },
+
+      // Punjab / Haryana
+      { keys: ["rock garden","sukhna lake","chandigarh rock garden"], name: "Chandigarh", code: "CDG" },
+      { keys: ["kurukshetra"], name: "Kurukshetra Junction", code: "KKDE" },
+      { keys: ["patiala"], name: "Rajpura Junction", code: "RPJ" },
+
+      // Gujarat
+      { keys: ["statue of unity","sardar sarovar","statue of unity kevadiya"], name: "Kevadiya", code: "KDCY" },
+      { keys: ["dwarkadhish temple","dwarka"], name: "Dwarka", code: "DWK" },
+      { keys: ["sabarmati ashram","sabarmati"], name: "Ahmedabad Junction", code: "ADI" },
+      { keys: ["saputara"], name: "Waghai", code: "WGI" },
+
+      // Maharashtra (more)
+      { keys: ["ajanta caves","ajanta"], name: "Jalgaon", code: "JL" },
+      { keys: ["ellora caves","ellora"], name: "Aurangabad", code: "AWB" },
+      { keys: ["shivneri fort"], name: "Pune Junction", code: "PUNE" },
+      { keys: ["lonavala"], name: "Lonavala", code: "LNL" },
+      { keys: ["imagica theme park","imagica"], name: "Khopoli", code: "KHPI" },
+      { keys: ["mahabaleshwar"], name: "Wathar", code: "WTR" },
+
+      // Uttar Pradesh expansion
+      { keys: ["mathura","krishna janmabhoomi","mathura vrindavan"], name: "Mathura Junction", code: "MTJ" },
+      { keys: ["vrindavan"], name: "Mathura Junction", code: "MTJ" },
+      { keys: ["noida"], name: "Anand Vihar Terminal", code: "ANVT" },
+      { keys: ["lucknow","bara imambara"], name: "Lucknow NR", code: "LKO" },
+
+      // Bihar / Jharkhand
+      { keys: ["bodh gaya","bodhgaya"], name: "Gaya Junction", code: "GAYA" },
+      { keys: ["nalanda"], name: "Bakhtiyarpur", code: "BKP" },
+      { keys: ["rajgir"], name: "Rajgir", code: "RGD" },
+      { keys: ["deoghar","baba dham"], name: "Jasidih Junction", code: "JSME" },
+
+      // Odisha
+      { keys: ["konark temple","konark sun temple"], name: "Puri", code: "PURI" },
+      { keys: ["chilika lake","chilika"], name: "Balugaon", code: "BALU" },
+      { keys: ["bhitarkanika"], name: "Bhadrak", code: "BHC" },
+
+      // North East
+      { keys: ["tawang"], name: "Tezpur", code: "TZTB" },
+      { keys: ["shillong"], name: "Guwahati", code: "GHY" },
+      { keys: ["cherrapunji","sohra"], name: "Guwahati", code: "GHY" },
+      { keys: ["majuli"], name: "Jorhat Town", code: "JTTN" },
+
+      // Himachal / Uttarakhand
+      { keys: ["kangra fort"], name: "Kangra Mandir", code: "KGMD" },
+      { keys: ["nanda devi"], name: "Haridwar", code: "HW" },
+      { keys: ["mussoorie"], name: "Dehradun", code: "DDN" },
+
+      // Special tourism / islands (nearest railheads)
+      { keys: ["andaman","cellular jail","port blair"], name: "Chennai Central (nearest railhead)", code: "MAS" },
+      { keys: ["lakshadweep","minicoy"], name: "Kochi", code: "ERS" },
+      { keys: ["kanyakumari"], name: "Kanyakumari", code: "CAPE" },
+
+      // Misc / fallback city mappings
+      { keys: ["kolkata","calcutta"], name: "Howrah Junction", code: "HWH" },
+      { keys: ["puri"], name: "Puri", code: "PURI" },
+      { keys: ["aurangabad ajanta","ajanta"], name: "Aurangabad", code: "AWB" },
+      { keys: ["sundarbans"], name: "Canning", code: "CG" },
+  
+  {
+    "place": "Taj Mahal",
+    "keys": ["taj mahal", "tajmahal", "agra taj"],
+    "station": "Agra Cantt.",
+    "code": "AGC",
+    "state": "Uttar Pradesh",
+    "category": "Monument"
+  },
+  {
+    "place": "Agra Fort",
+    "keys": ["agra fort"],
+    "station": "Agra Cantt.",
+    "code": "AGC",
+    "state": "Uttar Pradesh",
+    "category": "Monument"
+  },
+  {
+    "place": "Fatehpur Sikri",
+    "keys": ["fatehpur sikri"],
+    "station": "Fatehpur Sikri",
+    "code": "FTS",
+    "state": "Uttar Pradesh",
+    "category": "Monument"
+  },
+  {
+    "place": "Red Fort",
+    "keys": ["red fort", "lal qila", "lal kila"],
+    "station": "Old Delhi Junction",
+    "code": "DLI",
+    "state": "Delhi",
+    "category": "Monument"
+  },
+  {
+    "place": "Qutub Minar",
+    "keys": ["qutub minar", "qutub"],
+    "station": "New Delhi",
+    "code": "NDLS",
+    "state": "Delhi",
+    "category": "Monument"
+  },
+  {
+    "place": "India Gate",
+    "keys": ["india gate"],
+    "station": "New Delhi",
+    "code": "NDLS",
+    "state": "Delhi",
+    "category": "Monument"
+  },
+  {
+    "place": "Lotus Temple",
+    "keys": ["lotus temple"],
+    "station": "New Delhi",
+    "code": "NDLS",
+    "state": "Delhi",
+    "category": "Monument"
+  },
+  {
+    "place": "Humayun's Tomb",
+    "keys": ["humayun tomb", "humayun's tomb"],
+    "station": "Hazrat Nizamuddin",
+    "code": "NZM",
+    "state": "Delhi",
+    "category": "Monument"
+  },
+  {
+    "place": "Golconda Fort",
+    "keys": ["golconda fort", "golconda"],
+    "station": "Hyderabad Deccan",
+    "code": "HYB",
+    "state": "Telangana",
+    "category": "Monument"
+  },
+  {
+    "place": "Charminar",
+    "keys": ["charminar"],
+    "station": "Hyderabad Deccan",
+    "code": "HYB",
+    "state": "Telangana",
+    "category": "Monument"
+  },
+  {
+    "place": "Gateway of India",
+    "keys": ["gateway of india"],
+    "station": "Mumbai CST",
+    "code": "CSMT",
+    "state": "Maharashtra",
+    "category": "Monument"
+  },
+  {
+    "place": "Elephanta Caves",
+    "keys": ["elephanta caves", "elephanta"],
+    "station": "Mumbai CST",
+    "code": "CSMT",
+    "state": "Maharashtra",
+    "category": "Monument"
+  },
+  {
+    "place": "Chhatrapati Shivaji Terminus (CST)",
+    "keys": ["cst", "csmt", "victoria terminus"],
+    "station": "Mumbai CST",
+    "code": "CSMT",
+    "state": "Maharashtra",
+    "category": "Monument"
+  },
+  {
+    "place": "Victoria Memorial",
+    "keys": ["victoria memorial"],
+    "station": "Howrah Junction",
+    "code": "HWH",
+    "state": "West Bengal",
+    "category": "Monument"
+  },
+  {
+    "place": "Howrah Bridge",
+    "keys": ["howrah bridge"],
+    "station": "Howrah Junction",
+    "code": "HWH",
+    "state": "West Bengal",
+    "category": "Monument"
+  },
+  {
+    "place": "Belur Math",
+    "keys": ["belur math"],
+    "station": "Howrah Junction",
+    "code": "HWH",
+    "state": "West Bengal",
+    "category": "Monument"
+  },
+  {
+    "place": "Dakshineswar Temple",
+    "keys": ["dakshineswar"],
+    "station": "Dakshineswar",
+    "code": "DAKE",
+    "state": "West Bengal",
+    "category": "Monument"
+  },
+  {
+    "place": "Hawa Mahal",
+    "keys": ["hawa mahal", "wind palace"],
+    "station": "Jaipur Junction",
+    "code": "JP",
+    "state": "Rajasthan",
+    "category": "Monument"
+  },
+  {
+    "place": "Amber Fort",
+    "keys": ["amber fort", "amer fort"],
+    "station": "Jaipur Junction",
+    "code": "JP",
+    "state": "Rajasthan",
+    "category": "Monument"
+  },
+  {
+    "place": "City Palace Udaipur",
+    "keys": ["city palace udaipur"],
+    "station": "Udaipur City",
+    "code": "UDZ",
+    "state": "Rajasthan",
+    "category": "Monument"
+  },
+  {
+    "place": "Lake Pichola",
+    "keys": ["lake pichola"],
+    "station": "Udaipur City",
+    "code": "UDZ",
+    "state": "Rajasthan",
+    "category": "Monument"
+  },
+  {
+    "place": "Mehrangarh Fort",
+    "keys": ["mehrangarh fort"],
+    "station": "Jodhpur Junction",
+    "code": "JU",
+    "state": "Rajasthan",
+    "category": "Monument"
+  },
+  {
+    "place": "Jaisalmer Fort",
+    "keys": ["jaisalmer fort"],
+    "station": "Jaisalmer",
+    "code": "JSM",
+    "state": "Rajasthan",
+    "category": "Monument"
+  },
+  {
+    "place": "Umaid Bhawan Palace",
+    "keys": ["umaid bhawan"],
+    "station": "Jodhpur Junction",
+    "code": "JU",
+    "state": "Rajasthan",
+    "category": "Monument"
+  },
+  {
+    "place": "Rani ki Vav",
+    "keys": ["rani ki vav"],
+    "station": "Patan",
+    "code": "PTN",
+    "state": "Gujarat",
+    "category": "Monument"
+  },
+  {
+    "place": "Statue of Unity",
+    "keys": ["statue of unity"],
+    "station": "Kevadiya",
+    "code": "KDCY",
+    "state": "Gujarat",
+    "category": "Monument"
+  },
+  {
+    "place": "Sabarmati Ashram",
+    "keys": ["sabarmati ashram"],
+    "station": "Ahmedabad Junction",
+    "code": "ADI",
+    "state": "Gujarat",
+    "category": "Monument"
+  },
+  {
+    "place": "Sardar Patel Stadium Ahmedabad",
+    "keys": ["motera stadium", "narendra modi stadium"],
+    "station": "Sabarmati Junction",
+    "code": "SBT",
+    "state": "Gujarat",
+    "category": "Monument"
+  },
+  {
+    "place": "Khajuraho Monuments",
+    "keys": ["khajuraho"],
+    "station": "Khajuraho",
+    "code": "KUH",
+    "state": "Madhya Pradesh",
+    "category": "Monument"
+  },
+  {
+    "place": "Sanchi Stupa",
+    "keys": ["sanchi"],
+    "station": "Vidisha",
+    "code": "BHS",
+    "state": "Madhya Pradesh",
+    "category": "Monument"
+  },
+  {
+    "place": "Gwalior Fort",
+    "keys": ["gwalior fort"],
+    "station": "Gwalior",
+    "code": "GWL",
+    "state": "Madhya Pradesh",
+    "category": "Monument"
+  },
+  {
+    "place": "Ajanta Caves",
+    "keys": ["ajanta caves"],
+    "station": "Jalgaon",
+    "code": "JL",
+    "state": "Maharashtra",
+    "category": "Monument"
+  },
+  {
+    "place": "Ellora Caves",
+    "keys": ["ellora caves"],
+    "station": "Aurangabad",
+    "code": "AWB",
+    "state": "Maharashtra",
+    "category": "Monument"
+  },
+  {
+    "place": "Gateway of India",
+    "keys": ["gateway of india"],
+    "station": "Mumbai CST",
+    "code": "CSMT",
+    "state": "Maharashtra",
+    "category": "Monument"
+  },
+  {
+    "place": "Marine Drive",
+    "keys": ["marine drive"],
+    "station": "Churchgate",
+    "code": "CCG",
+    "state": "Maharashtra",
+    "category": "Monument"
+  },
+  {
+    "place": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya",
+    "keys": ["csmvs museum", "prince of wales museum"],
+    "station": "Churchgate",
+    "code": "CCG",
+    "state": "Maharashtra",
+    "category": "Monument"
+  },
+  {
+    "place": "Hampi",
+    "keys": ["hampi monuments"],
+    "station": "Hospet Junction",
+    "code": "HPT",
+    "state": "Karnataka",
+    "category": "Monument"
+  },
+  {
+    "place": "Mysore Palace",
+    "keys": ["mysore palace"],
+    "station": "Mysore Junction",
+    "code": "MYS",
+    "state": "Karnataka",
+    "category": "Monument"
+  },
+  {
+    "place": "Gol Gumbaz",
+    "keys": ["gol gumbaz"],
+    "station": "Bijapur",
+    "code": "BJP",
+    "state": "Karnataka",
+    "category": "Monument"
+  },
+  {
+    "place": "Brihadeeswara Temple",
+    "keys": ["brihadeeswara temple"],
+    "station": "Thanjavur",
+    "code": "TJ",
+    "state": "Tamil Nadu",
+    "category": "Monument"
+  },
+  {
+    "place": "Rockfort Temple Trichy",
+    "keys": ["trichy rockfort"],
+    "station": "Tiruchirappalli",
+    "code": "TPJ",
+    "state": "Tamil Nadu",
+    "category": "Monument"
+  },
+  {
+    "place": "Mahabalipuram Shore Temple",
+    "keys": ["mahabalipuram", "shore temple"],
+    "station": "Chengalpattu",
+    "code": "CGL",
+    "state": "Tamil Nadu",
+    "category": "Monument"
+  },
+  {
+    "place": "Vivekananda Rock (Kanyakumari)",
+    "keys": ["kanyakumari rock"],
+    "station": "Kanyakumari",
+    "code": "CAPE",
+    "state": "Tamil Nadu",
+    "category": "Monument"
+  },
+  {
+    "place": "Char Dhaam Dwarka",
+    "keys": ["dwaraka dham"],
+    "station": "Dwarka",
+    "code": "DWK",
+    "state": "Gujarat",
+    "category": "Monument"
+  },
+  {
+    "place": "Golden Temple",
+    "keys": ["golden temple", "harmandir sahib", "darbar sahib"],
+    "station": "Amritsar Junction",
+    "code": "ASR",
+    "state": "Punjab",
+    "category": "Temple"
+  },
+  {
+    "place": "Vaishno Devi",
+    "keys": ["vaishno devi", "mata vaishno", "katra temple"],
+    "station": "Katra",
+    "code": "SVDK",
+    "state": "Jammu & Kashmir",
+    "category": "Temple"
+  },
+  {
+    "place": "Somnath Temple",
+    "keys": ["somnath", "somnath jyotirlinga"],
+    "station": "Somnath",
+    "code": "SMNH",
+    "state": "Gujarat",
+    "category": "Temple"
+  },
+  {
+    "place": "Dwarka Temple",
+    "keys": ["dwarka temple", "dwarkadhish"],
+    "station": "Dwarka",
+    "code": "DWK",
+    "state": "Gujarat",
+    "category": "Temple"
+  },
+  {
+    "place": "Kashi Vishwanath Temple",
+    "keys": ["kashi vishwanath", "vishwanath temple"],
+    "station": "Varanasi Junction",
+    "code": "BSB",
+    "state": "Uttar Pradesh",
+    "category": "Temple"
+  },
+  {
+    "place": "Shirdi Sai Baba Temple",
+    "keys": ["shirdi", "sai baba temple"],
+    "station": "Sainagar Shirdi",
+    "code": "SNSI",
+    "state": "Maharashtra",
+    "category": "Temple"
+  },
+  {
+    "place": "Tirupati Balaji",
+    "keys": ["tirupati", "balaji temple", "tirupati balaji"],
+    "station": "Tirupati",
+    "code": "TPTY",
+    "state": "Andhra Pradesh",
+    "category": "Temple"
+  },
+  {
+    "place": "Rameshwaram Temple",
+    "keys": ["rameshwaram", "ramanathaswamy"],
+    "station": "Rameswaram",
+    "code": "RMM",
+    "state": "Tamil Nadu",
+    "category": "Temple"
+  },
+  {
+    "place": "Mahakaleshwar Jyotirlinga",
+    "keys": ["mahakaleshwar", "ujjain temple"],
+    "station": "Ujjain Junction",
+    "code": "UJN",
+    "state": "Madhya Pradesh",
+    "category": "Temple"
+  },
+  {
+    "place": "Kedarnath",
+    "keys": ["kedarnath", "kedarnath temple"],
+    "station": "Rishikesh",
+    "code": "RKSH",
+    "state": "Uttarakhand",
+    "category": "Temple"
+  },
+  {
+    "place": "Badrinath",
+    "keys": ["badrinath", "badrinath temple"],
+    "station": "Rishikesh",
+    "code": "RKSH",
+    "state": "Uttarakhand",
+    "category": "Temple"
+  },
+  {
+    "place": "Amarnath",
+    "keys": ["amarnath", "amarnath cave"],
+    "station": "Jammu Tawi",
+    "code": "JAT",
+    "state": "Jammu & Kashmir",
+    "category": "Temple"
+  },
+  {
+    "place": "Haridwar",
+    "keys": ["haridwar", "har ki pauri"],
+    "station": "Haridwar Junction",
+    "code": "HW",
+    "state": "Uttarakhand",
+    "category": "Spiritual"
+  },
+  {
+    "place": "Rishikesh",
+    "keys": ["rishikesh", "ram jhula", "laxman jhula"],
+    "station": "Rishikesh",
+    "code": "RKSH",
+    "state": "Uttarakhand",
+    "category": "Spiritual"
+  },
+  {
+    "place": "Banke Bihari Temple Vrindavan",
+    "keys": ["banke bihari", "vrindavan temple"],
+    "station": "Mathura Junction",
+    "code": "MTJ",
+    "state": "Uttar Pradesh",
+    "category": "Temple"
+  },
+  {
+    "place": "Prem Mandir Vrindavan",
+    "keys": ["prem mandir", "vrindavan prem mandir"],
+    "station": "Mathura Junction",
+    "code": "MTJ",
+    "state": "Uttar Pradesh",
+    "category": "Temple"
+  },
+  {
+    "place": "ISKCON Vrindavan",
+    "keys": ["iskcon vrindavan"],
+    "station": "Mathura Junction",
+    "code": "MTJ",
+    "state": "Uttar Pradesh",
+    "category": "Temple"
+  },
+  {
+    "place": "Ayodhya Ram Mandir",
+    "keys": ["ram mandir", "ayodhya ram temple", "ayodhya"],
+    "station": "Ayodhya Dham",
+    "code": "AY",
+    "state": "Uttar Pradesh",
+    "category": "Temple"
+  },
+  {
+    "place": "Jagdish Temple Udaipur",
+    "keys": ["jagdish temple udaipur"],
+    "station": "Udaipur City",
+    "code": "UDZ",
+    "state": "Rajasthan",
+    "category": "Temple"
+  },
+  {
+    "place": "Kamakhya Temple",
+    "keys": ["kamakhya temple", "kamakhya"],
+    "station": "Guwahati",
+    "code": "GHY",
+    "state": "Assam",
+    "category": "Temple"
+  },
+  {
+    "place": "Konark Sun Temple",
+    "keys": ["konark", "sun temple konark"],
+    "station": "Puri",
+    "code": "PURI",
+    "state": "Odisha",
+    "category": "Temple"
+  },
+  {
+    "place": "Jagannath Temple Puri",
+    "keys": ["jagannath temple", "puri temple"],
+    "station": "Puri",
+    "code": "PURI",
+    "state": "Odisha",
+    "category": "Temple"
+  },
+  {
+    "place": "Lingaraj Temple Bhubaneswar",
+    "keys": ["lingaraj temple"],
+    "station": "Bhubaneswar",
+    "code": "BBS",
+    "state": "Odisha",
+    "category": "Temple"
+  },
+  {
+    "place": "Meenakshi Amman Temple",
+    "keys": ["meenakshi temple", "madurai temple"],
+    "station": "Madurai Junction",
+    "code": "MDU",
+    "state": "Tamil Nadu",
+    "category": "Temple"
+  },
+  {
+    "place": "Sabarimala Temple",
+    "keys": ["sabarimala"],
+    "station": "Kottayam",
+    "code": "KTYM",
+    "state": "Kerala",
+    "category": "Temple"
+  },
+  {
+    "place": "Guruvayur Temple",
+    "keys": ["guruvayur", "guruvayur temple"],
+    "station": "Guruvayur",
+    "code": "GUV",
+    "state": "Kerala",
+    "category": "Temple"
+  },
+  {
+    "place": "Somnath Jyotirlinga",
+    "keys": ["somnath", "somnath jyotirling"],
+    "station": "Somnath",
+    "code": "SMNH",
+    "state": "Gujarat",
+    "category": "Temple"
+  },
+  {
+    "place": "Mallikarjuna Jyotirlinga",
+    "keys": ["mallikarjuna", "srisailam temple"],
+    "station": "Markapur Road",
+    "code": "MRK",
+    "state": "Andhra Pradesh",
+    "category": "Temple"
+  },
+  {
+    "place": "Mahakaleshwar Jyotirlinga",
+    "keys": ["mahakaleshwar"],
+    "station": "Ujjain Junction",
+    "code": "UJN",
+    "state": "Madhya Pradesh",
+    "category": "Temple"
+  },
+  {
+    "place": "Omkareshwar Jyotirlinga",
+    "keys": ["omkareshwar"],
+    "station": "Omkareshwar Road",
+    "code": "OM",
+    "state": "Madhya Pradesh",
+    "category": "Temple"
+  },
+  {
+    "place": "Trimbakeshwar Jyotirlinga",
+    "keys": ["trimbakeshwar"],
+    "station": "Nashik Road",
+    "code": "NK",
+    "state": "Maharashtra",
+    "category": "Temple"
+  },
+  {
+    "place": "Bhimashankar Jyotirlinga",
+    "keys": ["bhimashankar"],
+    "station": "Pune Junction",
+    "code": "PUNE",
+    "state": "Maharashtra",
+    "category": "Temple"
+  },
+  {
+    "place": "Kasi Annapurna Temple",
+    "keys": ["annapurna temple"],
+    "station": "Varanasi Junction",
+    "code": "BSB",
+    "state": "Uttar Pradesh",
+    "category": "Temple"
+  },
+  {
+    "place": "Shani Shingnapur",
+    "keys": ["shani shingnapur"],
+    "station": "Ahmednagar",
+    "code": "ANG",
+    "state": "Maharashtra",
+    "category": "Temple"
+  },
+  {
+    "place": "Pandharpur Vitthal Temple",
+    "keys": ["pandharpur", "vitthal temple"],
+    "station": "Pandharpur",
+    "code": "PVR",
+    "state": "Maharashtra",
+    "category": "Temple"
+  },
+  {
+    "place": "Dharmasthala Temple",
+    "keys": ["dharmasthala"],
+    "station": "Mangalore Junction",
+    "code": "MAJN",
+    "state": "Karnataka",
+    "category": "Temple"
+  },
+  {
+    "place": "Manali",
+    "keys": ["manali", "hadimba temple", "solang valley"],
+    "station": "Joginder Nagar",
+    "code": "JDNX",
+    "state": "Himachal Pradesh",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Shimla",
+    "keys": ["shimla", "mall road shimla"],
+    "station": "Shimla",
+    "code": "SML",
+    "state": "Himachal Pradesh",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Kullu",
+    "keys": ["kullu", "kullu valley"],
+    "station": "Joginder Nagar",
+    "code": "JDNX",
+    "state": "Himachal Pradesh",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Dharamshala",
+    "keys": ["dharamshala", "mcleodganj"],
+    "station": "Pathankot",
+    "code": "PTK",
+    "state": "Punjab",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Dalhousie",
+    "keys": ["dalhousie", "khajjiar"],
+    "station": "Pathankot",
+    "code": "PTK",
+    "state": "Punjab",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Mussoorie",
+    "keys": ["mussoorie", "mall road mussoorie"],
+    "station": "Dehradun",
+    "code": "DDN",
+    "state": "Uttarakhand",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Nainital",
+    "keys": ["nainital", "naini lake"],
+    "station": "Kathgodam",
+    "code": "KGM",
+    "state": "Uttarakhand",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Almora",
+    "keys": ["almora"],
+    "station": "Kathgodam",
+    "code": "KGM",
+    "state": "Uttarakhand",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Auli",
+    "keys": ["auli", "auli uttarakhand"],
+    "station": "Rishikesh",
+    "code": "RKSH",
+    "state": "Uttarakhand",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Ranikhet",
+    "keys": ["ranikhet"],
+    "station": "Kathgodam",
+    "code": "KGM",
+    "state": "Uttarakhand",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Lansdowne",
+    "keys": ["lansdowne"],
+    "station": "Kotdwar",
+    "code": "KTW",
+    "state": "Uttarakhand",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Darjeeling",
+    "keys": ["darjeeling", "darjeeling hills"],
+    "station": "New Jalpaiguri",
+    "code": "NJP",
+    "state": "West Bengal",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Kalimpong",
+    "keys": ["kalimpong"],
+    "station": "New Jalpaiguri",
+    "code": "NJP",
+    "state": "West Bengal",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Gangtok",
+    "keys": ["gangtok", "sikkim"],
+    "station": "New Jalpaiguri",
+    "code": "NJP",
+    "state": "Sikkim",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Pelling",
+    "keys": ["pelling"],
+    "station": "New Jalpaiguri",
+    "code": "NJP",
+    "state": "Sikkim",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Ooty",
+    "keys": ["ooty", "udhagamandalam"],
+    "station": "Mettupalayam",
+    "code": "MTP",
+    "state": "Tamil Nadu",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Coonoor",
+    "keys": ["coonoor"],
+    "station": "Mettupalayam",
+    "code": "MTP",
+    "state": "Tamil Nadu",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Kodaikanal",
+    "keys": ["kodaikanal", "kodai"],
+    "station": "Kodai Road",
+    "code": "KQN",
+    "state": "Tamil Nadu",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Munnar",
+    "keys": ["munnar"],
+    "station": "Aluva",
+    "code": "AWY",
+    "state": "Kerala",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Wayanad",
+    "keys": ["wayanad"],
+    "station": "Kozhikode",
+    "code": "CLT",
+    "state": "Kerala",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Coorg",
+    "keys": ["coorg", "madikeri"],
+    "station": "Mysore Junction",
+    "code": "MYS",
+    "state": "Karnataka",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Chikmagalur",
+    "keys": ["chikmagalur"],
+    "station": "Kad uru",
+    "code": "KDU",
+    "state": "Karnataka",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Sakleshpur",
+    "keys": ["sakleshpur"],
+    "station": "Sakleshpur",
+    "code": "SKLR",
+    "state": "Karnataka",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Araku Valley",
+    "keys": ["araku", "araku valley"],
+    "station": "Araku",
+    "code": "ARK",
+    "state": "Andhra Pradesh",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Mount Abu",
+    "keys": ["mount abu"],
+    "station": "Abu Road",
+    "code": "ABR",
+    "state": "Rajasthan",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Pachmarhi",
+    "keys": ["pachmarhi"],
+    "station": "Pipariya",
+    "code": "PPI",
+    "state": "Madhya Pradesh",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Mahabaleshwar",
+    "keys": ["mahabaleshwar"],
+    "station": "Wathar",
+    "code": "WTR",
+    "state": "Maharashtra",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Lonavala",
+    "keys": ["lonavala"],
+    "station": "Lonavala",
+    "code": "LNL",
+    "state": "Maharashtra",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Lavasa",
+    "keys": ["lavasa"],
+    "station": "Pune Junction",
+    "code": "PUNE",
+    "state": "Maharashtra",
+    "category": "Hill Station"
+  },
+  {
+    "place": "Baga Beach",
+    "keys": ["baga beach"],
+    "station": "Thivim",
+    "code": "THVM",
+    "state": "Goa",
+    "category": "Beach"
+  },
+  {
+    "place": "Calangute Beach",
+    "keys": ["calangute beach"],
+    "station": "Thivim",
+    "code": "THVM",
+    "state": "Goa",
+    "category": "Beach"
+  },
+  {
+    "place": "Anjuna Beach",
+    "keys": ["anjuna beach"],
+    "station": "Thivim",
+    "code": "THVM",
+    "state": "Goa",
+    "category": "Beach"
+  },
+  {
+    "place": "Vagator Beach",
+    "keys": ["vagator beach"],
+    "station": "Thivim",
+    "code": "THVM",
+    "state": "Goa",
+    "category": "Beach"
+  },
+  {
+    "place": "Palolem Beach",
+    "keys": ["palolem beach"],
+    "station": "Canacona",
+    "code": "CNO",
+    "state": "Goa",
+    "category": "Beach"
+  },
+  {
+    "place": "Colva Beach",
+    "keys": ["colva beach"],
+    "station": "Madgaon",
+    "code": "MAO",
+    "state": "Goa",
+    "category": "Beach"
+  },
+  {
+    "place": "Varca Beach",
+    "keys": ["varca beach"],
+    "station": "Madgaon",
+    "code": "MAO",
+    "state": "Goa",
+    "category": "Beach"
+  },
+  {
+    "place": "Varkala Beach",
+    "keys": ["varkala beach"],
+    "station": "Varkala",
+    "code": "VAK",
+    "state": "Kerala",
+    "category": "Beach"
+  },
+  {
+    "place": "Kovalam Beach",
+    "keys": ["kovalam beach"],
+    "station": "Thiruvananthapuram",
+    "code": "TVC",
+    "state": "Kerala",
+    "category": "Beach"
+  },
+  {
+    "place": "Alleppy Beach",
+    "keys": ["alleppey beach"],
+    "station": "Alappuzha",
+    "code": "ALLP",
+    "state": "Kerala",
+    "category": "Beach"
+  },
+  {
+    "place": "Puri Beach",
+    "keys": ["puri beach"],
+    "station": "Puri",
+    "code": "PURI",
+    "state": "Odisha",
+    "category": "Beach"
+  },
+  {
+    "place": "Gopalpur Beach",
+    "keys": ["gopalpur beach"],
+    "station": "Brahmapur",
+    "code": "BAM",
+    "state": "Odisha",
+    "category": "Beach"
+  },
+  {
+    "place": "Delhi",
+    "keys": ["delhi", "new delhi", "delhi city"],
+    "station": "New Delhi",
+    "code": "NDLS",
+    "state": "Delhi",
+    "category": "City"
+  },
+  {
+    "place": "Mumbai",
+    "keys": ["mumbai", "bombay"],
+    "station": "Mumbai Central",
+    "code": "BCT",
+    "state": "Maharashtra",
+    "category": "City"
+  },
+  {
+    "place": "Bangalore",
+    "keys": ["bangalore", "bengaluru"],
+    "station": "KSR Bengaluru",
+    "code": "SBC",
+    "state": "Karnataka",
+    "category": "City"
+  },
+  {
+    "place": "Hyderabad",
+    "keys": ["hyderabad", "charminar hyderabad"],
+    "station": "Hyderabad Deccan",
+    "code": "HYB",
+    "state": "Telangana",
+    "category": "City"
+  },
+  {
+    "place": "Chennai",
+    "keys": ["chennai", "madras"],
+    "station": "Chennai Central",
+    "code": "MAS",
+    "state": "Tamil Nadu",
+    "category": "City"
+  },
+  {
+    "place": "Kolkata",
+    "keys": ["kolkata", "calcutta"],
+    "station": "Howrah Junction",
+    "code": "HWH",
+    "state": "West Bengal",
+    "category": "City"
+  },
+  {
+    "place": "Jaipur",
+    "keys": ["jaipur", "pink city"],
+    "station": "Jaipur Junction",
+    "code": "JP",
+    "state": "Rajasthan",
+    "category": "City"
+  },
+  {
+    "place": "Udaipur",
+    "keys": ["udaipur", "city of lakes"],
+    "station": "Udaipur City",
+    "code": "UDZ",
+    "state": "Rajasthan",
+    "category": "City"
+  },
+  {
+    "place": "Jodhpur",
+    "keys": ["jodhpur", "blue city"],
+    "station": "Jodhpur Junction",
+    "code": "JU",
+    "state": "Rajasthan",
+    "category": "City"
+  },
+  {
+    "place": "Agra",
+    "keys": ["agra", "taj mahal city"],
+    "station": "Agra Cantt",
+    "code": "AGC",
+    "state": "Uttar Pradesh",
+    "category": "City"
+  },
+  {
+    "place": "Ahmedabad",
+    "keys": ["ahmedabad"],
+    "station": "Ahmedabad Junction",
+    "code": "ADI",
+    "state": "Gujarat",
+    "category": "City"
+  },
+  {
+    "place": "Surat",
+    "keys": ["surat"],
+    "station": "Surat",
+    "code": "ST",
+    "state": "Gujarat",
+    "category": "City"
+  },
+  {
+    "place": "Pune",
+    "keys": ["pune"],
+    "station": "Pune Junction",
+    "code": "PUNE",
+    "state": "Maharashtra",
+    "category": "City"
+  },
+  {
+    "place": "Nagpur",
+    "keys": ["nagpur", "orange city"],
+    "station": "Nagpur",
+    "code": "NGP",
+    "state": "Maharashtra",
+    "category": "City"
+  },
+  {
+    "place": "Varanasi",
+    "keys": ["varanasi", "benaras", "kashi"],
+    "station": "Varanasi Junction",
+    "code": "BSB",
+    "state": "Uttar Pradesh",
+    "category": "City"
+  },
+  {
+    "place": "Lucknow",
+    "keys": ["lucknow"],
+    "station": "Lucknow Charbagh",
+    "code": "LKO",
+    "state": "Uttar Pradesh",
+    "category": "City"
+  },
+  {
+    "place": "Indore",
+    "keys": ["indore"],
+    "station": "Indore Junction",
+    "code": "INDB",
+    "state": "Madhya Pradesh",
+    "category": "City"
+  },
+  {
+    "place": "Bhopal",
+    "keys": ["bhopal"],
+    "station": "Bhopal Junction",
+    "code": "BPL",
+    "state": "Madhya Pradesh",
+    "category": "City"
+  },
+  {
+    "place": "Patna",
+    "keys": ["patna"],
+    "station": "Patna Junction",
+    "code": "PNBE",
+    "state": "Bihar",
+    "category": "City"
+  },
+  {
+    "place": "Ranchi",
+    "keys": ["ranchi"],
+    "station": "Ranchi Junction",
+    "code": "RNC",
+    "state": "Jharkhand",
+    "category": "City"
+  },
+  {
+    "place": "Bhubaneswar",
+    "keys": ["bhubaneswar"],
+    "station": "Bhubaneswar",
+    "code": "BBS",
+    "state": "Odisha",
+    "category": "City"
+  },
+  {
+    "place": "Guwahati",
+    "keys": ["guwahati", "assam guwahati"],
+    "station": "Guwahati",
+    "code": "GHY",
+    "state": "Assam",
+    "category": "City"
+  },
+  {
+    "place": "Chandigarh",
+    "keys": ["chandigarh"],
+    "station": "Chandigarh",
+    "code": "CDG",
+    "state": "Chandigarh",
+    "category": "City"
+  },
+  {
+    "place": "Amritsar",
+    "keys": ["amritsar"],
+    "station": "Amritsar Junction",
+    "code": "ASR",
+    "state": "Punjab",
+    "category": "City"
+  },
+  {
+    "place": "Dehradun",
+    "keys": ["dehradun"],
+    "station": "Dehradun",
+    "code": "DDN",
+    "state": "Uttarakhand",
+    "category": "City"
+  },
+
+  /* -------------------- NATIONAL PARKS -------------------- */
+
+  {
+    "place": "Jim Corbett National Park",
+    "keys": ["jim corbett", "corbett park"],
+    "station": "Ramnagar",
+    "code": "RMR",
+    "state": "Uttarakhand",
+    "category": "National Park"
+  },
+  {
+    "place": "Ranthambore National Park",
+    "keys": ["ranthambore"],
+    "station": "Sawai Madhopur",
+    "code": "SWM",
+    "state": "Rajasthan",
+    "category": "National Park"
+  },
+  {
+    "place": "Gir Forest",
+    "keys": ["gir", "gir national park"],
+    "station": "Junagadh Junction",
+    "code": "JND",
+    "state": "Gujarat",
+    "category": "National Park"
+  },
+  {
+    "place": "Kaziranga National Park",
+    "keys": ["kaziranga"],
+    "station": "Furkating Junction",
+    "code": "FKG",
+    "state": "Assam",
+    "category": "National Park"
+  },
+  {
+    "place": "Sundarbans",
+    "keys": ["sundarbans"],
+    "station": "Canning",
+    "code": "CG",
+    "state": "West Bengal",
+    "category": "National Park"
+  },
+  {
+    "place": "Bandhavgarh National Park",
+    "keys": ["bandhavgarh"],
+    "station": "Umaria",
+    "code": "UMR",
+    "state": "Madhya Pradesh",
+    "category": "National Park"
+  },
+  {
+    "place": "Kanha National Park",
+    "keys": ["kanha"],
+    "station": "Jabalpur",
+    "code": "JBP",
+    "state": "Madhya Pradesh",
+    "category": "National Park"
+  },
+  {
+    "place": "Periyar Wildlife Sanctuary",
+    "keys": ["periyar"],
+    "station": "Kottayam",
+    "code": "KTYM",
+    "state": "Kerala",
+    "category": "National Park"
+  },
+  {
+    "place": "Hemis National Park",
+    "keys": ["hemis"],
+    "station": "Leh",
+    "code": "LEH",
+    "state": "Ladakh",
+    "category": "National Park"
+  },
+  {
+    "place": "Valley of Flowers",
+    "keys": ["valley of flowers"],
+    "station": "Rishikesh",
+    "code": "RKSH",
+    "state": "Uttarakhand",
+    "category": "National Park"
+  },
+
+  /* -------------------- SPECIAL LANDMARKS -------------------- */
+
+  {
+    "place": "India Gate",
+    "keys": ["india gate"],
+    "station": "New Delhi",
+    "code": "NDLS",
+    "state": "Delhi",
+    "category": "Landmark"
+  },
+  {
+    "place": "Red Fort",
+    "keys": ["red fort", "lal kila"],
+    "station": "Old Delhi Junction",
+    "code": "DLI",
+    "state": "Delhi",
+    "category": "Landmark"
+  },
+  {
+    "place": "Qutub Minar",
+    "keys": ["qutub minar"],
+    "station": "New Delhi",
+    "code": "NDLS",
+    "state": "Delhi",
+    "category": "Landmark"
+  },
+  {
+    "place": "Lotus Temple",
+    "keys": ["lotus temple"],
+    "station": "New Delhi",
+    "code": "NDLS",
+    "state": "Delhi",
+    "category": "Landmark"
+  },
+
+  {
+    "place": "Gateway of India",
+    "keys": ["gateway of india"],
+    "station": "Mumbai CST",
+    "code": "CSMT",
+    "state": "Maharashtra",
+    "category": "Landmark"
+  },
+  {
+    "place": "Marine Drive",
+    "keys": ["marine drive"],
+    "station": "Mumbai Central",
+    "code": "BCT",
+    "state": "Maharashtra",
+    "category": "Landmark"
+  },
+
+  {
+    "place": "Sanchi Stupa",
+    "keys": ["sanchi stupa"],
+    "station": "Vidisha",
+    "code": "BHS",
+    "state": "Madhya Pradesh",
+    "category": "Landmark"
+  },
+  {
+    "place": "Chittorgarh Fort",
+    "keys": ["chittorgarh fort"],
+    "station": "Chittaurgarh",
+    "code": "COR",
+    "state": "Rajasthan",
+    "category": "Landmark"
+  },
+
+  {
+    "place": "Nalanda University Ruins",
+    "keys": ["nalanda"],
+    "station": "Rajgir",
+    "code": "RGD",
+    "state": "Bihar",
+    "category": "Landmark"
+  },
+
+  {
+    "place": "Rani ki Vav",
+    "keys": ["rani ki vav"],
+    "station": "Patan",
+    "code": "PTN",
+    "state": "Gujarat",
+    "category": "Landmark"
+  },
+
+  {
+    "place": "Mysore Palace",
+    "keys": ["mysore palace"],
+    "station": "Mysore Junction",
+    "code": "MYS",
+    "state": "Karnataka",
+    "category": "Landmark"
+  },
+
+  {
+    "place": "Charminar",
+    "keys": ["charminar"],
+    "station": "Hyderabad Deccan",
+    "code": "HYB",
+    "state": "Telangana",
+    "category": "Landmark"
+  }
+];
+
+    // --- Matching logic (keeps first match found) ---
+    for (const map of stationMappings) {
+        for (const key of map.keys) {
+            if (q.includes(key)) {
+                // Updated to handle both data structures
+                stationName = map.name || map.station;
+                stationCode = map.code;
+                break;
+            }
+        }
+        if (stationName !== "Not Found") break;
+    }
+
+    // Small fallback: common Taj/Agra combos not caught above
+    if (stationName === "Not Found") {
+        if ((q.includes("taj") && q.includes("agra")) || q.includes("taaj")) {
+            stationName = "Agra Cantt.";
+            stationCode = "AGC";
+        }
+    }
+
+    return `
+        <div class="station-result-card">
+            <p>Nearest station to <strong>${query}</strong> is:</p>
+            <h2>${stationName} (${stationCode})</h2>
+        </div>
+    `;
+}
 
                 let responseHTML = '<div class="gemini-response-elegant">';
                 if (query.toLowerCase().includes("kolkata")) {
@@ -839,8 +2297,7 @@ if (query.toLowerCase().includes("majuli")) { stationName = "Jorhat Town"; stati
                 } else {
                      return `<p class="text-center text-gray-600">Please try another prompt to see a detailed itinerary!</p>`;
                 }
-                
-                responseHTML += '</div>';
+                                responseHTML += '</div>';
                 return responseHTML;
             }
         });
