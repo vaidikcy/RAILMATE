@@ -4,7 +4,7 @@ require("dotenv").config();
 
 const app = express();
 const PORT = Number(process.env.PORT || 3000);
-const ROOT_DIR = __dirname;
+const PUBLIC_DIR = path.join(__dirname, "public");
 const RAPIDAPI_KEY = process.env.RAPIDAPI_KEY;
 const NVIDIA_API_KEY = process.env.NVIDIA_API_KEY;
 const NVIDIA_MODEL = process.env.NVIDIA_MODEL || "meta/llama-3.1-8b-instruct";
@@ -13,7 +13,7 @@ const OFFICIAL_STATION_SEARCH_URL = "https://claims.indianrail.gov.in/claims/cla
 const STATION_CACHE_TTL_MS = 1000 * 60 * 60 * 12;
 
 app.use(express.json());
-app.use(express.static(ROOT_DIR));
+app.use(express.static(PUBLIC_DIR));
 
 const STATION_MAPPINGS = [
   { keys: ["taj mahal", "agra fort", "agra"], stationName: "Agra Cantt.", stationCode: "AGC" },
@@ -1258,10 +1258,28 @@ app.post("/api/plan-trip", async (req, res) => {
   }
 });
 
-app.use((_req, res) => {
-  res.sendFile(path.join(ROOT_DIR, "index.html"));
+app.use((error, req, res, _next) => {
+  console.error(error);
+
+  if (res.headersSent) {
+    return;
+  }
+
+  if (req.path.startsWith("/api/")) {
+    return jsonError(res, 500, "Unexpected server error.");
+  }
+
+  res.status(500).send("Unexpected server error.");
 });
 
-app.listen(PORT, () => {
-  console.log(`RailMate is running at http://localhost:${PORT}`);
+app.use((_req, res) => {
+  res.sendFile(path.join(PUBLIC_DIR, "index.html"));
 });
+
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`RailMate is running at http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;

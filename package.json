@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "RailMate demo with Express backend and AI planner support.",
   "main": "server.js",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js"
